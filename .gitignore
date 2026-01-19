@@ -1,0 +1,34 @@
+
+# === SAE5 DEFAULT IGNORE BLOCK ===
+
+# 🧨 Secrets / credentials (NEVER COMMIT)
+.env
+.env.*
+credentials.txt
+secrets.txt
+*password*
+*.key
+*.pem
+id_rsa
+id_ed25519
+
+# 🧱 VirtualBox / Vagrant artifacts (NE PAS VERSIONNER)
+.vagrant/
+VirtualBox VMs/
+*.vdi
+*.vmdk
+*.vbox
+*.vbox-prev
+*.ova
+*.ovf
+
+# 🧹 OS / Editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# 🐍 Python cache (si besoin)
+__pycache__/
+*.pyc
