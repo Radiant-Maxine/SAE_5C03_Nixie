@@ -1,0 +1,61 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.2.9 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.2.9">
+  <diagram name="Page-1" id="viI1Q9gJWkTwmQirAl8U">
+    <mxGraphModel dx="4031" dy="1402" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ap9i-MQegcUbLAPgY_Bd-16" parent="1" style="shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#647687;strokeColor=#314354;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.tablet;network2IconW=1;network2IconH=0.6566;fontColor=#ffffff;" value="" vertex="1">
+          <mxGeometry height="426.78" width="650" x="130" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="ap9i-MQegcUbLAPgY_Bd-1" parent="1" style="shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.laptop;network2IconW=1;network2IconH=0.5734;" value="PC Travail 10.203.19.10" vertex="1">
+          <mxGeometry height="120" width="209.28" x="-150" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ap9i-MQegcUbLAPgY_Bd-2" parent="1" style="shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.desktop_pc;network2IconXOffset=-0.0034;network2IconYOffset=0.00035;network2IconW=0.453;network2IconH=0.9995;" value="Tour Serveur GOAD 10.203.19.20" vertex="1">
+          <mxGeometry height="180" width="81.58" x="-86.15" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="ap9i-MQegcUbLAPgY_Bd-3" parent="1" style="shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.desktop_pc;network2IconXOffset=-0.0034;network2IconYOffset=0.00035;network2IconW=0.453;network2IconH=0.9995;" value="Tour serveur SIEM 10.203.19.30" vertex="1">
+          <mxGeometry height="180" width="81.58" x="-86.15" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="ap9i-MQegcUbLAPgY_Bd-4" parent="1" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;notch=0;fillColor=#e6d0de;strokeColor=#996185;gradientColor=#d5739d;" value="" vertex="1">
+          <mxGeometry height="70" width="100" x="20" y="615" as="geometry" />
+        </mxCell>
+        <mxCell id="ap9i-MQegcUbLAPgY_Bd-5" parent="1" style="shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.projector_canvas;network2IconW=1;network2IconH=1.04;" value="Wazuh 10.203.19.50 &amp; 51" vertex="1">
+          <mxGeometry height="156" width="150" x="150" y="572" as="geometry" />
+        </mxCell>
+        <mxCell id="ap9i-MQegcUbLAPgY_Bd-6" parent="1" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.jumpInArrow;dy=11.17;dx=50.67;arrowHead=55;rotation=180;fillColor=#e6d0de;gradientColor=#d5739d;strokeColor=#996185;" value="" vertex="1">
+          <mxGeometry height="100" width="196.15" x="-282.3" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="ap9i-MQegcUbLAPgY_Bd-7" parent="1" style="shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#76608a;strokeColor=#432D57;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.cloud;network2IconYOffset=-0.08;network2IconW=1.0004;network2IconH=0.7222;fontColor=#ffffff;" value="" vertex="1">
+          <mxGeometry height="573.8" width="794.82" x="-1070" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ap9i-MQegcUbLAPgY_Bd-8" parent="1" style="shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.data_storage;network2IconW=0.8252;network2IconH=0.9989;" value="GOAD WorkStation 1 10.203.19.61" vertex="1">
+          <mxGeometry height="110" width="90.87" x="-940" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="ap9i-MQegcUbLAPgY_Bd-9" parent="1" style="shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#EDEDED;strokeColor=#000000;gradientColor=#5B6163;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.data_storage;network2IconW=0.8252;network2IconH=0.9989;" value="GOAD WorkStation 1 10.203.19.62" vertex="1">
+          <mxGeometry height="110" width="90.87" x="-730" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="ap9i-MQegcUbLAPgY_Bd-10" parent="1" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/active_directory.svg;" value="AD 1 10.203.19.65" vertex="1">
+          <mxGeometry height="127.5" width="150" x="-849.13" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="ap9i-MQegcUbLAPgY_Bd-12" parent="1" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/vista_terminal.svg;" value="GOAD Serveur 1 10.203.19.63" vertex="1">
+          <mxGeometry height="150" width="97.5" x="-580" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="ap9i-MQegcUbLAPgY_Bd-13" parent="1" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/vista_terminal.svg;" value="GOAD Serveur 1 10.203.19.64" vertex="1">
+          <mxGeometry height="150" width="97.5" x="-440" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="ap9i-MQegcUbLAPgY_Bd-14" parent="1" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/mac_client.svg;" value="OpenWec 10.203.19.40" vertex="1">
+          <mxGeometry height="195" width="183.3" x="213.7" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="ap9i-MQegcUbLAPgY_Bd-17" parent="1" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.67;dx=20;notch=0;fillColor=#fad7ac;strokeColor=#b46504;" value="" vertex="1">
+          <mxGeometry height="60" width="100" x="70" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ap9i-MQegcUbLAPgY_Bd-18" parent="1" style="shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#fad7ac;strokeColor=#b46504;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.biohazard;network2IconXOffset=-0.0048;network2IconYOffset=-0.001;network2IconW=1.0124;network2IconH=0.93;" value="Exegol pour attaques 10.203.19.60&#xa;*" vertex="1">
+          <mxGeometry height="160" width="174.18" x="350" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="ap9i-MQegcUbLAPgY_Bd-19" parent="1" style="shape=mxgraph.networks2.icon;aspect=fixed;fillColor=#fad9d5;strokeColor=#ae4132;network2IconShadow=1;network2bgFillColor=none;labelPosition=center;verticalLabelPosition=bottom;align=center;verticalAlign=top;network2Icon=mxgraph.networks2.network_security;network2IconW=1;network2IconH=0.86;" value="Suricata" vertex="1">
+          <mxGeometry height="170" width="197.67" x="570" y="570" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
