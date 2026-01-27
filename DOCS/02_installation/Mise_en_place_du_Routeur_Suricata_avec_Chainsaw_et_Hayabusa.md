@@ -88,6 +88,30 @@ nano /etc/suricata/suricata.yaml
 : 
 ![](https://hedgedoc.botturi.fr/uploads/758663c0-7f65-4220-85fe-08522e5f6b55.png)
 
+## 3.4/ Chargement des règles 
+
+Pour cela on lance la commande : 
+```bash=
+suricata-update
+```
+![](https://hedgedoc.botturi.fr/uploads/3610b908-c887-4c85-9ca3-14b4f15f077a.png)
+
+Ensuite, on va modifier la configuration Suricata pour que les règles téléchargées (qui sont dans `/var/lib/suricata/rules/`) soient bien lues par Suricata. Pour cela on modifie le fichier de conf : 
+```bash=
+nano /etc/suricata/suricata/yaml
+```
+Et on passe la ligne `default-rule-path:` à `/var/lib/suricata/rules/` : 
+![](https://hedgedoc.botturi.fr/uploads/0d14b48e-a848-4e27-ab7a-105e099e23ee.png)
+
+Et une fois toutes les commandes récupérées et indiquées dans le fichier de conf, on recharge les règles : 
+```bash=
+sudo suricatasc -c reload-rules
+sudo suricatasc -c ruleset-stats
+```
+
+![](https://hedgedoc.botturi.fr/uploads/bd4b8131-7bbf-4fab-a22e-a6ca99fc054f.png)
+
+
 # 4/ Mise en place de Hayabusa
 
 # 4.1/ Installation
