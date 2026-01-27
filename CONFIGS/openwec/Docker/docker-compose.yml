@@ -1,0 +1,21 @@
+services:
+  openwec:
+    container_name: openwec
+    image: openwec
+    pull_policy: never
+    restart: unless-stopped
+    ports:
+      - "5985:5985"
+    volumes:
+      - ./config.toml:/etc/openwec.conf.toml:ro
+      - ./openwec.sae.botturi.fr.keytab:/opt/openwec/openwec.sae.botturi.fr.keytab:ro
+      - ./subscriptions:/etc/openwec/subscriptions:ro
+      - ./data_openwec:/var/lib/openwec/db/:rw
+      - /etc/localtime:/etc/localtime:ro           # Pour la sync temporelle
+      - /etc/timezone:/etc/timezone:ro             # De même
+    healthcheck:
+      test: ["CMD", "nc", "-zv", "127.0.0.1", "5985"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
