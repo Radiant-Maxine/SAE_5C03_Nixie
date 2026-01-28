@@ -60,7 +60,7 @@ Navigue dans le répertoire extrait et exécute l'installation avec les paramèt
 
 ```powershell
 cd elastic-agent-9.1.9-windows-x86_64
-.\\elastic-agent.exe install --url=https://10.203.19.75:8220 --enrollment-token=ZzdjSUFKd0IyZk9NZ3lUOGRlM2E6bWNFRUVhMUVfd1dtNjd2UDFUb3ROQQ== --insecure
+.\\elastic-agent.exe install --url=https://10.203.19.75:8220 --enrollment-token=M0JlUkE1d0JncUJycklKWmdKNTg6QU1mSFNFcEloVzVJeWNOMXlvUXBhQQ== --insecure
 ```
 
 | Paramètre | Signification |
