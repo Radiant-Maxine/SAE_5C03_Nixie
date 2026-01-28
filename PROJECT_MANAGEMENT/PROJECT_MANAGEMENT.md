@@ -1,7 +1,7 @@
 # 📋 GESTION DE PROJET - SAE 5C03 Cybersécurité
 
 **Projet:** Proof of Concept Blue Team / Red Team - Environnement GOAD  
-**Équipe:** Syrine Belkadhi (Blue Team) + Maxine Botturi (Red Team)  
+**Équipe:** Syrine Belkadhi et Maxine Botturi 
 **Durée:** 2 semaines (19/01/2026 - 30/01/2026)  
 **Soutenance:** 30/01/2026
 
@@ -28,7 +28,7 @@
 - **Automatisation:** Ansible playbooks
 
 ### Répartition des rôles
-- **Syrine:** Blue Team (SIEM, détection, monitoring, IDS)
+- **Syrine:** Blue Team (SIEM, détection, monitoring, gestion de projet)
 - **Maxine:** Red Team (attaques, cartographie AD, scénarios d'intrusion, logs, analyse)
 - **Les deux:** Documentation, synthèse finale, bilan chiffré
 
@@ -57,8 +57,6 @@
 | Mer 29/01 | Analyse comparative détection, préventions |
 | Jeu 30/01 | **Rédaction synthèse + annexes + soutenance** |
 | Jeu 30/01 | **Réinitialisation matériel + rendu final** |
-
-**⚠️ DEADLINE CRITIQUE:** 30/01/2026 - Pas de marge !
 
 ---
 
