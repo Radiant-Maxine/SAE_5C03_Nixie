@@ -1,3 +1,3 @@
-# 📁 PROJECT_MANAGEMENT
+# 📁 Gestion de projet
 
-Rôles, décisions, temps passé, questions à l’ingénieur, suivi agile.
+Rôles, décisions, temps passé, suivi agile.
