@@ -1,0 +1,246 @@
+{
+  "@timestamp": [
+    "2026-01-28T15:59:47.106Z"
+  ],
+  "agent.ephemeral_id": [
+    "13329710-40ec-4dca-8b3d-c27cab0d2ae5"
+  ],
+  "agent.id": [
+    "534a1b79-99d2-47d1-963a-a2f522871b24"
+  ],
+  "agent.name": [
+    "meereen"
+  ],
+  "agent.name.text": [
+    "meereen"
+  ],
+  "agent.type": [
+    "filebeat"
+  ],
+  "agent.version": [
+    "9.1.9"
+  ],
+  "data_stream.dataset": [
+    "system.security"
+  ],
+  "data_stream.namespace": [
+    "default"
+  ],
+  "data_stream.type": [
+    "logs"
+  ],
+  "ecs.version": [
+    "8.11.0"
+  ],
+  "elastic_agent.id": [
+    "534a1b79-99d2-47d1-963a-a2f522871b24"
+  ],
+  "elastic_agent.snapshot": [
+    false
+  ],
+  "elastic_agent.version": [
+    "9.1.9"
+  ],
+  "event.action": [
+    "kerberos-authentication-ticket-requested"
+  ],
+  "event.agent_id_status": [
+    "verified"
+  ],
+  "event.category": [
+    "authentication"
+  ],
+  "event.code": [
+    "4768"
+  ],
+  "event.created": [
+    "2026-01-28T15:59:48.729Z"
+  ],
+  "event.dataset": [
+    "system.security"
+  ],
+  "event.ingested": [
+    "2026-01-28T15:59:58.000Z"
+  ],
+  "event.kind": [
+    "event"
+  ],
+  "event.module": [
+    "system"
+  ],
+  "event.outcome": [
+    "success"
+  ],
+  "event.provider": [
+    "Microsoft-Windows-Security-Auditing"
+  ],
+  "event.type": [
+    "start"
+  ],
+  "host.architecture": [
+    "x86_64"
+  ],
+  "host.hostname": [
+    "meereen"
+  ],
+  "host.id": [
+    "19adf400-7821-4dc7-b655-e9b7ea6c5544"
+  ],
+  "host.ip": [
+    "fe80::f903:b1a2:f88b:37e8",
+    "10.203.19.63",
+    "fe80::b8c6:283b:145d:b457",
+    "192.168.56.12",
+    "fe80::5efe:c0a8:380c",
+    "fe80::5efe:acb:133f"
+  ],
+  "host.mac": [
+    "00-00-00-00-00-00-00-E0",
+    "08-00-27-15-72-FC",
+    "08-00-27-D8-D0-5D"
+  ],
+  "host.name": [
+    "meereen"
+  ],
+  "host.os.build": [
+    "14393.1944"
+  ],
+  "host.os.family": [
+    "windows"
+  ],
+  "host.os.kernel": [
+    "10.0.14393.1944 (rs1_release.171129-2100)"
+  ],
+  "host.os.name": [
+    "Windows Server 2016 Standard Evaluation"
+  ],
+  "host.os.name.text": [
+    "Windows Server 2016 Standard Evaluation"
+  ],
+  "host.os.platform": [
+    "windows"
+  ],
+  "host.os.type": [
+    "windows"
+  ],
+  "host.os.version": [
+    "10.0"
+  ],
+  "input.type": [
+    "winlog"
+  ],
+  "log.level": [
+    "information"
+  ],
+  "message": [
+    "A Kerberos authentication ticket (TGT) was requested.\n\nAccount Information:\n\tAccount Name:\t\tmissandei\n\tSupplied Realm Name:\tESSOS.LOCAL\n\tUser ID:\t\t\tS-1-5-21-2640866812-885156548-4246832817-1117\n\nService Information:\n\tService Name:\t\tkrbtgt\n\tService ID:\t\tS-1-5-21-2640866812-885156548-4246832817-502\n\nNetwork Information:\n\tClient Address:\t\t::ffff:10.203.19.254\n\tClient Port:\t\t28582\n\nAdditional Information:\n\tTicket Options:\t\t0x50800000\n\tResult Code:\t\t0x0\n\tTicket Encryption Type:\t0x17\n\tPre-Authentication Type:\t0\n\nCertificate Information:\n\tCertificate Issuer Name:\t\t\n\tCertificate Serial Number:\t\n\tCertificate Thumbprint:\t\t\n\nCertificate information is only provided if a certificate was used for pre-authentication.\n\nPre-authentication types, ticket options, encryption types and result codes are defined in RFC 4120."
+  ],
+  "related.ip": [
+    "10.203.19.254"
+  ],
+  "related.user": [
+    "missandei"
+  ],
+  "service.name": [
+    "krbtgt"
+  ],
+  "service.name.text": [
+    "krbtgt"
+  ],
+  "source.ip": [
+    "10.203.19.254"
+  ],
+  "source.port": [
+    28582
+  ],
+  "tags": [
+    "_geoip_database_unavailable_GeoLite2-City.mmdb",
+    "_geoip_database_unavailable_GeoLite2-ASN.mmdb"
+  ],
+  "user.domain": [
+    "ESSOS.LOCAL"
+  ],
+  "user.id": [
+    "S-1-5-21-2640866812-885156548-4246832817-1117"
+  ],
+  "user.name": [
+    "missandei"
+  ],
+  "user.name.text": [
+    "missandei"
+  ],
+  "winlog.channel": [
+    "Security"
+  ],
+  "winlog.computer_name": [
+    "meereen.essos.local"
+  ],
+  "winlog.event_data.PreAuthType": [
+    "0"
+  ],
+  "winlog.event_data.ServiceName": [
+    "krbtgt"
+  ],
+  "winlog.event_data.ServiceSid": [
+    "S-1-5-21-2640866812-885156548-4246832817-502"
+  ],
+  "winlog.event_data.Status": [
+    "0x0"
+  ],
+  "winlog.event_data.StatusDescription": [
+    "KDC_ERR_NONE"
+  ],
+  "winlog.event_data.TargetDomainName": [
+    "ESSOS.LOCAL"
+  ],
+  "winlog.event_data.TargetSid": [
+    "S-1-5-21-2640866812-885156548-4246832817-1117"
+  ],
+  "winlog.event_data.TargetUserName": [
+    "missandei"
+  ],
+  "winlog.event_data.TicketEncryptionType": [
+    "0x17"
+  ],
+  "winlog.event_data.TicketEncryptionTypeDescription": [
+    "RC4-HMAC"
+  ],
+  "winlog.event_data.TicketOptions": [
+    "0x50800000"
+  ],
+  "winlog.event_data.TicketOptionsDescription": [
+    "Forwardable",
+    "Proxiable",
+    "Renewable"
+  ],
+  "winlog.event_id": [
+    "4768"
+  ],
+  "winlog.keywords": [
+    "Audit Success"
+  ],
+  "winlog.opcode": [
+    "Info"
+  ],
+  "winlog.process.pid": [
+    576
+  ],
+  "winlog.process.thread.id": [
+    2296
+  ],
+  "winlog.provider_guid": [
+    "{54849625-5478-4994-A5BA-3E3B0328C30D}"
+  ],
+  "winlog.provider_name": [
+    "Microsoft-Windows-Security-Auditing"
+  ],
+  "winlog.record_id": [
+    "124144"
+  ],
+  "winlog.task": [
+    "Kerberos Authentication Service"
+  ],
+  "_id": "AZwFVVjoKMFYzjg_QSL6",
+  "_index": ".ds-logs-system.security-default-2026.01.28-000001",
+  "_score": null
+}
