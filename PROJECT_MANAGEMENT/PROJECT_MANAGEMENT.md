@@ -1,450 +1,446 @@
-# 📋 GESTION DE PROJET - SAE 5C03 Cybersécurité
+# GESTION DE PROJET - SAE 5C03 Cybersécurité
 
 **Projet:** Proof of Concept Blue Team / Red Team - Environnement GOAD  
-**Équipe:** Syrine Belkadhi et Maxine Botturi 
-**Durée:** 2 semaines (19/01/2026 - 30/01/2026)  
+**Équipe:** Syrine Belkadhi (Blue Team) + Maxine Botturi (Red Team)  
+**Durée:** 10 jours (20/01/2026 - 30/01/2026)  
 **Soutenance:** 30/01/2026
 
 ---
 
-## 🎯 1. VUE D'ENSEMBLE
+## 1. Introduction & Contexte
 
-### Objectifs du projet
-- Déployer un environnement Active Directory vulnérable (GOAD) sur VirtualBox
-- Mettre en œuvre des outils de détection : 2 SIEM (Wazuh + Elastic), IDS (Suricata), collecteur de logs (OpenWEC)
-- Automatiser le déploiement des agents avec Ansible
-- Cartographier l'AD avec BloodHound/SharpHound
-- Réaliser des tests d'intrusion et analyser les détections
-- Comparer l'efficacité des différentes méthodes de détection
+### Contexte du projet
 
-### Stack technique
-- **Infrastructure:** VirtualBox, GOAD (5 VMs Windows AD)
-- **SIEM:** Wazuh, Elastic Stack
-- **Collecteur logs:** OpenWEC (+ dashboard IA)
-- **IDS:** Suricata + Sigma Rules
-- **Outils portables:** Chainsaw, Hayabusa
-- **Monitoring Windows:** Sysmon, Audit natif
-- **Red Team:** Exegol, BloodHound, SharpHound, Neo4J
-- **Automatisation:** Ansible playbooks
+Notre projet, réalisé dans le cadre de la SAE 5C03 Cybersécurité, consiste à déployer un environnement de détection d'intrusions combinant approches Blue Team et Red Team. Notre objectif est d'évaluer l'efficacité de plusieurs solutions de détection (SIEM, IDS, collecteurs de logs) face à des scénarios d'attaque sur un Active Directory vulnérable.
 
-### Répartition des rôles
-- **Syrine:** Blue Team (SIEM, détection, monitoring, gestion de projet)
-- **Maxine:** Red Team (attaques, cartographie AD, scénarios d'intrusion, logs, analyse)
-- **Les deux:** Documentation, synthèse finale, bilan chiffré
+### Objectifs et livrables
 
----
+Notre projet vise à :
+- Déployer l'environnement GOAD (5 machines Windows en domaine Active Directory)
+- Mettre en œuvre Wazuh, Elastic, Suricata et OpenWEC
+- Automatiser le déploiement des agents via Ansible
+- Réaliser des tests d'intrusion documentés
+- Analyser l'efficacité comparative des solutions de détection
 
-## 📅 2. PLANNING & TIMELINE
+Les livrables attendus comprennent une synthèse technique de 5 à 10 pages, des annexes techniques détaillées, un rapport de gestion de projet avec bilan chiffré, un dépôt GitHub structuré, et une soutenance prévue le 30 janvier 2026.
 
-### Semaine 1 (20/01 - 24/01) - Sprint 1: Infrastructure & Blue Team
-**Charge de travail:** 4j × 7h30 + 1j × 3h45 = **33h45/personne**
+### Contraintes
 
-| Jour | Focus principal |
-|------|----------------|
-| Lun 20/01 | Déploiement GOAD, installation Wazuh |
-| Mar 21/01 | Configuration SIEM, déploiement agents Ansible |
-| Mer 22/01 | OpenWEC + Sysmon, connexion logs |
-| Jeu 23/01 | Suricata + Sigma Rules, Chainsaw/Hayabusa |
-| Ven 24/01 | BloodHound/SharpHound, vérifications infrastructure |
+Nous avons travaillé sur 10 jours ouvrés du 20 au 30 janvier 2026, soit environ 70 heures chacune. La deadline non négociable du 30 janvier inclut la soutenance et la réinitialisation obligatoire du matériel. Nous devions nous partager les ressources du laboratoire avec d'autres projets. La complexité technique de l'environnement GOAD et l'intégration de multiples solutions hétérogènes ont représenté des défis majeurs.
 
-### Semaine 2 (27/01 - 30/01) - Sprint 2: Red Team & Synthèse
-**Charge de travail:** 4j × 7h30 + 1j × 3h45 = **33h45/personne**
+### Organisation de l'équipe
 
-| Jour | Focus principal |
-|------|----------------|
-| Lun 27/01 | Scénarios d'attaque, cartographie AD |
-| Mar 28/01 | Tests d'intrusion, collecte traces/détections |
-| Mer 29/01 | Analyse comparative détection, préventions |
-| Jeu 30/01 | **Rédaction synthèse + annexes + soutenance** |
-| Jeu 30/01 | **Réinitialisation matériel + rendu final** |
+Nous avons réparti le travail selon nos domaines de compétence tout en maintenant une collaboration étroite sur l'ensemble des tâches :
+
+**Blue Team (Syrine) :**
+- Wazuh (installation, configuration)
+- Elastic Stack (installation, configuration)
+- Déploiement des agents via Ansible (Wazuh et Elastic)
+- Configuration Sysmon
+- Exegol (installation via pipx)
+- Analyse des alertes et détections
+- Gestion de projet
+
+**Red Team & Infrastructure (Maxine) :**
+- Déploiement environnement GOAD
+- OpenWEC et Suricata
+- Dashboard Streamlit avec IA
+- Exegol (installation via pip et Docker)
+- Tests d'intrusion et collecte de traces
+- Analyse comparative des solutions
+
+Cette répartition nous a permis de travailler en parallèle durant la phase d'installation (semaine 1) tout en collaborant étroitement pour l'analyse comparative (semaine 2).
 
 ---
 
-## 📝 3. BACKLOG COMPLET
+## 2. Méthodologie appliquée
 
-### Légende estimation
-- **XS:** 0.5 - 1h
-- **S:** 1 - 2h
-- **M:** 2 - 4h
-- **L:** 4 - 6h
-- **XL:** 6h+
+### Approche agile
 
----
+Nous avons mené le projet en méthode agile sur 2 phases d'une semaine chacune, adaptée aux contraintes de temps et à la taille de notre équipe.
 
-### 🔵 EPIC 1: Infrastructure de base
+| Phase | Période | Objectif principal | Durée |
+|--------|---------|-------------------|-------|
+| **Phase 1** | 20-24 janvier | Infrastructure & Détection | 5 jours |
+| **Phase 2** | 27-30 janvier | Tests & Analyse | 4 jours |
 
-| # | Tâche | Responsable | Estimation | Statut | Temps réel |
-|---|-------|-------------|-----------|--------|-----------|
-| 1.1 | Mettre en place le repo Git & structure | Les deux | S (1.5h) | ✅ Terminé | 1.5h |
-| 1.2 | Créer plan d'adressage & schéma réseau | Les deux | M (3h) | ✅ Terminé | 3h |
-| 1.3 | Déploiement machines GOAD (5 VMs) | Maxine | XL (8h) | ✅ Terminé | 9h |
-| 1.4 | Vérifier installation GOAD | Maxine | S (1.5h) | ✅ Terminé | 2h |
-| 1.5 | Connecter machines GOAD au réseau salle | Les deux | M (2h) | ✅ Terminé | 2.5h |
-| **TOTAL EPIC 1** | | | **16h** | | **18h** |
+### Organisation du travail
 
----
+**Répartition des rôles :**
 
-### 🔵 EPIC 2: Déploiement SIEM & Collecteur
+| Domaine | Syrine (Blue) | Maxine (Red + Infra) |
+|---------|---------------|---------------------|
+| **SIEM** | Wazuh, Elastic | - |
+| **Collecteur logs** | - | OpenWEC |
+| **IDS** | - | Suricata |
+| **Monitoring** | Sysmon, Ansible | - |
+| **Infrastructure** | - | GOAD (5 VMs) |
+| **Attaque** | Exegol (pipx) | Exegol (pip/Docker), Tests intrusion |
+| **Analyse** | Détections SIEM | Analyse comparative, Dashboard IA |
+| **Gestion projet** | Pilotage complet | - |
 
-| # | Tâche | Responsable | Estimation | Statut | Temps réel |
-|---|-------|-------------|-----------|--------|-----------|
-| 2.1 | Installation Wazuh | Syrine | L (5h) | ✅ Terminé | 5h |
-| 2.2 | Configuration Wazuh + lien machines domaine | Syrine | L (6h) | ✅ Terminé | 7h |
-| 2.3 | Installation Elastic Stack | Syrine | L (5h) | 🔄 En cours | - |
-| 2.4 | Configurer Elastic | Syrine | L (5h) | 🔄 En cours | - |
-| 2.5 | Installer OpenWEC + connecter logs | Maxine | XL (7h) | ✅ Terminé | 8h |
-| 2.6 | Mettre en place Sysmon sur Windows | Syrine | M (4h) | ✅ Terminé | 4.5h |
-| 2.7 | Playbooks Ansible déploiement agents | Syrine | XL (6h) | 🔄 En cours | - |
-| **TOTAL EPIC 2** | | | **38h** | | **24.5h** |
+### Outils de gestion
 
----
+| Outil | Usage | Avantages |
+|-------|-------|-----------||
+| **Trello** | Gestion des tâches (Kanban : À faire → En cours → Terminé) | Visualisation claire de l'avancement |
+| **GitHub** | Dépôt central (code, configs, docs, logs) | Traçabilité par commits, organisation structurée |
+| **Réunions quotidiennes** | Synchronisation d'équipe et résolution de blocages | Réactivité face aux problèmes techniques |
 
-### 🔵 EPIC 3: IDS & Outils de détection
+### Découpage en phases
 
-| # | Tâche | Responsable | Estimation | Statut | Temps réel |
-|---|-------|-------------|-----------|--------|-----------|
-| 3.1 | Installer Suricata + Sigma Rules | Syrine | L (5h) | 🔄 En cours | - |
-| 3.2 | Configurer Suricata (placement réseau) | Syrine | M (3h) | 📋 À faire | - |
-| 3.3 | Installer Chainsaw + Hayabusa | Syrine | S (2h) | 🔄 En cours | - |
-| 3.4 | Tester détection avec outils portables | Syrine | M (3h) | 📋 À faire | - |
-| **TOTAL EPIC 3** | | | **13h** | | **0h** |
+#### Phase 1 : Infrastructure & Détection (20-24 janvier)
 
----
+**Objectif :** Environnement complet avec toutes les solutions opérationnelles
 
-### 🔴 EPIC 4: Red Team - Cartographie & Attaques
+**Jalons clés :**
+- ✅ Jour 1 (20/01) : GOAD déployé + Wazuh installé
+- ✅ Jour 2 (21/01) : Wazuh configuré + agents connectés
+- ✅ Jour 3 (22/01) : Ansible opérationnel + Elastic en cours
+- ✅ Jour 4 (23/01) : Suricata + procédures documentées
+- ✅ Jour 5 (24/01) : Validation infrastructure complète
 
-| # | Tâche | Responsable | Estimation | Statut | Temps réel |
-|---|-------|-------------|-----------|--------|-----------|
-| 4.1 | Installation Exegol | Maxine | M (2h) | 🔄 En cours | - |
-| 4.2 | Installer BloodHound + SharpHound + Neo4J | Maxine | M (4h) | 📋 À faire | - |
-| 4.3 | Cartographier AD avec SharpHound | Maxine | M (3h) | 📋 À faire | - |
-| 4.4 | Analyser chemins d'attaque BloodHound | Maxine | M (4h) | 📋 À faire | - |
-| 4.5 | Définir scénarios d'attaque | Maxine | M (3h) | 📋 À faire | - |
-| 4.6 | Lancer scénarios d'attaques | Maxine | L (6h) | 📋 À faire | - |
-| 4.7 | Récupérer traces & détections | Les deux | M (3h) | 📋 À faire | - |
-| **TOTAL EPIC 4** | | | **25h** | | **0h** |
+#### Phase 2 : Tests & Analyse (27-30 janvier)
+
+**Objectif :** Tests d'intrusion + analyse comparative + livrables finaux
+
+**Jalons clés :**
+- ✅ Jour 6 (27/01) : OpenWEC + Dashboard IA + Elastic finalisé + Suricata configuré
+- ✅ Jour 7 (28/01) : Exegol + premières attaques Kerberos + traces collectées
+- 🔄 Jour 8 (29/01) : Analyse comparative en cours + rédaction
+- 📋 Jour 9 (30/01) : Finalisation synthèse + soutenance + réinitialisation matériel
 
 ---
 
-### 🟢 EPIC 5: Analyse & Prévention
+## 3. Planification initiale
 
-| # | Tâche | Responsable | Estimation | Statut | Temps réel |
-|---|-------|-------------|-----------|--------|-----------|
-| 5.1 | Analyser alertes Wazuh | Maxine | M (3h) | 📋 À faire | - |
-| 5.2 | Analyser alertes Elastic | Maxine | M (3h) | 📋 À faire | - |
-| 5.3 | Analyser alertes Suricata | Maxine | M (2h) | 📋 À faire | - |
-| 5.4 | Comparer efficacité SIEM/IDS/Outils | Maxine | L (4h) | 📋 À faire | - |
-| 5.5 | Mettre en place des préventions | Les deux | M (4h) | 📋 À faire | - |
-| **TOTAL EPIC 5** | | | **16h** | | **0h** |
+### Budget temps disponible
+
+| Période | Nombre de jours | Heures par jour | Total par personne | Total équipe |
+|---------|-----------------|-----------------|-------------------|--------------||
+| Semaine 1 | 4j + 1j court | 4×7h30 + 1×3h45 | 33h45 | 67h30 |
+| Semaine 2 | 4j + 1j court | 4×7h30 + 1×3h45 | 33h45 | 67h30 |
+| **TOTAL** | **10 jours** | - | **67h30** | **135h** |
+
+### Découpage des phases et tâches principales
+
+#### Phase 1 : Infrastructure & Détection (Semaine 1)
+
+| Tâche | Responsable | Estimation | Dépendances |
+|-------|-------------|-----------|-------------||
+| Initialisation repo GitHub + structure | Les deux | 2h | - |
+| Schéma architecture réseau | Les deux | 3h | - |
+| Déploiement GOAD (5 VMs Windows) | Maxine | 8h | Schéma réseau |
+| Installation Wazuh | Syrine | 5h | - |
+| Configuration Wazuh | Syrine | 6h | Installation Wazuh |
+| Installation Elastic Stack | Syrine | 5h | - |
+| Configuration Elastic | Syrine | 5h | Installation Elastic |
+| Installation OpenWEC | Maxine | 7h | GOAD opérationnel |
+| Configuration Sysmon | Syrine | 4h | GOAD opérationnel |
+| Playbooks Ansible agents | Syrine | 6h | Wazuh/Elastic installés |
+| Installation Suricata | Maxine | 5h | - |
+| Configuration Suricata + Sigma Rules | Maxine | 3h | Installation Suricata |
+| Dashboard Streamlit IA | Maxine | 6h | OpenWEC opérationnel |
+
+**Total estimé Phase 1 : ~65h**
+
+#### Phase 2 : Tests & Analyse (Semaine 2)
+
+| Tâche | Responsable | Estimation | Dépendances |
+|-------|-------------|-----------|-------------||
+| Installation Exegol | Les deux | 3h | - |
+| Installation BloodHound/SharpHound | Maxine | 4h | Exegol |
+| Cartographie AD | Maxine | 3h | BloodHound |
+| Scénarios d'attaque (Kerberos, etc.) | Maxine | 8h | Cartographie AD |
+| Collecte traces attaques | Les deux | 4h | Attaques lancées |
+| Analyse alertes Wazuh | Syrine | 3h | Traces collectées |
+| Analyse alertes Elastic | Syrine | 3h | Traces collectées |
+| Analyse alertes Suricata | Maxine | 2h | Traces collectées |
+| Analyse comparative solutions | Les deux | 5h | Toutes analyses faites |
+| Rédaction synthèse technique | Les deux | 8h | Analyse terminée |
+| Rédaction annexes techniques | Les deux | 6h | - |
+| Préparation soutenance | Les deux | 3h | Synthèse finalisée |
+| Réinitialisation matériel | Les deux | 1h | Après soutenance |
+
+**Total estimé Phase 2 : ~53h**
+
+### Jalons critiques
+
+| Date | Jalon | Critère de validation |
+|------|-------|----------------------|
+| **24/01** | Fin Phase 1 - Infrastructure complète | Tous les SIEM/IDS/collecteurs opérationnels avec agents déployés |
+| **28/01** | Attaques réalisées + traces collectées | Au moins 3 scénarios d'attaque documentés avec logs |
+| **29/01** | Analyse comparative terminée | Tableau comparatif d'efficacité finalisé |
+| **30/01 matin** | Synthèse finale + annexes prêtes | Documents complets pour le rendu |
+| **30/01 après-midi** | Soutenance + réinitialisation | Présentation effectuée + matériel nettoyé |
+
+### Risques identifiés en amont
+
+| Risque | Impact | Probabilité | Plan d'atténuation |
+|--------|--------|-------------|-------------------|
+| GOAD ne se déploie pas correctement | ⚠️ Critique | Moyenne | Snapshots réguliers, documentation Orange Cyberdefense |
+| Problèmes de communication agents SIEM | ⚠️ Élevé | Élevée | Tests firewall Windows, config réseau validée en amont |
+| Manque de temps pour analyse comparative | ⚠️ Moyen | Élevée | Prioriser 2-3 scénarios d'attaque représentatifs |
+| Retard sur déploiement Suricata | ⚠️ Moyen | Moyenne | Documentation en parallèle, support communauté |
+| Oubli réinitialisation matériel | ⚠️ Élevé | Faible | Checklist finale obligatoire, alarme rappel |
 
 ---
 
-### 📄 EPIC 6: Documentation & Livrables
+## 4. Bilan chiffré & Suivi du temps
 
-| # | Tâche | Responsable | Estimation | Statut | Temps réel |
-|---|-------|-------------|-----------|--------|-----------|
-| 6.1 | Documenter chaque process | Les deux | Continu | 🔄 En cours | - |
-| 6.2 | Rédiger synthèse finale (5-10 pages) | Les deux | XL (8h) | 📋 À faire | - |
-| 6.3 | Créer schémas & graphiques | Syrine | M (3h) | 📋 À faire | - |
-| 6.4 | Bilan chiffré & graphique gestion projet | Syrine | M (2h) | 📋 À faire | - |
-| 6.5 | Rédiger annexes techniques détaillées | Les deux | L (6h) | 📋 À faire | - |
-| 6.6 | Documenter Win/Fail & compétences acquises | Les deux | M (2h) | 📋 À faire | - |
-| 6.7 | Bilan questions/réponses expert | Les deux | S (1h) | 📋 À faire | - |
-| 6.8 | Réinitialiser matériel LAB | Les deux | S (1h) | 📋 À faire | - |
-| 6.9 | Préparer soutenance | Les deux | M (3h) | 📋 À faire | - |
-| **TOTAL EPIC 6** | | | **26h** | | **0h** |
+### Temps de travail par personne
 
----
+| Période | Syrine | Maxine | Total équipe |
+|---------|--------|--------|--------------||
+| **Semaine 1** (20-24 janvier) | 32h | 36h | 68h |
+| **Semaine 2** (27-30 janvier) | 35h30 | 36h30 | 72h |
+| **TOTAL PROJET** | **67h30** | **72h30** | **140h** |
 
-### 📊 RÉCAPITULATIF GLOBAL
-
-| Epic | Heures estimées | Heures réelles | Delta | Avancement |
-|------|-----------------|----------------|-------|-----------|
-| EPIC 1: Infrastructure | 16h | 18h | +2h | 100% ✅ |
-| EPIC 2: SIEM & Logs | 38h | 24.5h | -13.5h | ~50% 🔄 |
-| EPIC 3: IDS & Détection | 13h | 0h | - | ~20% 🔄 |
-| EPIC 4: Red Team | 25h | 0h | - | ~10% 🔄 |
-| EPIC 5: Analyse | 16h | 0h | - | 0% 📋 |
-| EPIC 6: Documentation | 26h | 0h | - | ~15% 🔄 |
-| **TOTAL PROJET** | **134h** | **42.5h** | | **~25%** |
-
-**Charge totale disponible:** 67.5h × 2 personnes = **135h** ✅ Budget OK
-
----
-
-## ⏱️ 4. SUIVI DU TEMPS (Bilan chiffré)
-
-### Heures par personne & par semaine
-
-| Période | Syrine (Blue) | Maxine (Red + Logs + Analyse) | Total équipe |
-|---------|---------------|-------------------------------|-------------|
-| **Semaine 1** (20-24/01) | 16.5h | 26h | 42.5h |
-| **Semaine 2** (27-30/01) | 0h | 0h | 0h |
-| **TOTAL** | **16.5h** | **26h** | **42.5h / 135h** |
-
-### Répartition par type de tâche
+### Répartition du temps par catégorie de tâches
 
 | Catégorie | Syrine | Maxine | Total | % du projet |
-|-----------|--------|--------|-------|-----------|
-| Infrastructure | 6h | 12h | 18h | 42% |
-| SIEM | 16.5h | 0h | 16.5h | 39% |
-| Logs | 0h | 8h | 8h | 19% |
-| IDS/Détection | 0h | 0h | 0h | 0% |
-| Red Team | 0h | 0h | 0h | 0% |
-| Analyse | 0h | 0h | 0h | 0% |
-| Documentation | 0h | 0h | 0h | 0% |
-| **TOTAL** | **22.5h** | **20h** | **42.5h** | **31%** |
+|-----------|--------|--------|-------|-------------||
+| **Infrastructure & GOAD** | 3h | 17h | 20h | 14% |
+| **SIEM (Wazuh + Elastic)** | 26h | 0h | 26h | 19% |
+| **Collecteur logs (OpenWEC)** | 0h | 13h | 13h | 9% |
+| **IDS & Détection (Suricata, Sysmon)** | 7h | 9h | 16h | 11% |
+| **Automatisation (Ansible)** | 6h | 0h | 6h | 4% |
+| **Dashboard IA** | 0h | 7h | 7h | 5% |
+| **Red Team (Exegol, attaques)** | 3h | 13h | 16h | 11% |
+| **Analyse & Tests** | 8h | 7h | 15h | 11% |
+| **Documentation** | 10h | 6h | 16h | 11% |
+| **Gestion de projet** | 4h30 | 0h30 | 5h | 4% |
+| **TOTAL** | **67h30** | **72h30** | **140h** | **100%** |
 
-### Graphique à créer pour le rendu
+### Graphiques à créer pour le rendu
+
+#### Graphique 1 : Répartition du temps par personne (Diagramme en barres)
+
 ```
-[À générer en fin de projet]
-- Diagramme en barres : heures par personne
-- Camembert : répartition par type de tâche
-- Timeline : progression hebdomadaire
+[À générer avec Excel/Python/autre outil]
+
+Axes :
+- X : Catégories de tâches (Infrastructure, SIEM, IDS, Red Team, etc.)
+- Y : Heures de travail
+- Deux barres par catégorie : Syrine (bleu) vs Maxine (rouge)
 ```
 
----
+#### Graphique 2 : Répartition globale par type de tâche (Camembert)
 
-## ⚠️ 5. RISQUES & SOLUTIONS
+```
+[À générer avec Excel/Python/autre outil]
 
-| # | Risque | Probabilité | Impact | Mitigation | Statut |
-|---|--------|-------------|--------|-----------|--------|
-| R1 | GOAD ne démarre pas correctement | Moyenne | Critique | Documentation Orange Cyberdefense, backup snapshots VMs | ✅ Résolu |
-| R2 | Agents SIEM ne communiquent pas | Élevée | Élevé | Tester config réseau, firewall Windows, playbooks Ansible robustes | 🔄 En cours |
-| R3 | Manque de temps pour analyse comparative | Élevée | Moyen | Prioriser 2-3 scénarios d'attaque clés, automatiser collecte logs | ⚠️ À surveiller |
-| R4 | Suricata placement réseau incorrect | Moyenne | Moyen | Valider architecture réseau en amont, mode promiscuous | 📋 À traiter |
-| R5 | Synthèse finale bâclée (deadline 30/01) | Élevée | Critique | **Commencer rédaction dès 28/01**, template prêt, sections pré-remplies | ⚠️ Critique |
-| R6 | Oubli réinitialisation matériel | Faible | Élevé | Checklist finale, alarme rappel 30/01 | 📋 Planifié |
-| R7 | Disponibilité expert senior limitée | Moyenne | Moyen | Préparer questions précises en amont, sessions groupées | 🔄 Géré |
+Parts du camembert :
+- SIEM : 19%
+- Infrastructure : 14%
+- Documentation : 11%
+- IDS & Détection : 11%
+- Red Team : 11%
+- Analyse & Tests : 11%
+- Collecteur logs : 9%
+- Dashboard : 5%
+- Automatisation : 4%
+- Gestion projet : 4%
+```
 
----
+#### Graphique 3 : Timeline de progression hebdomadaire (Gantt simplifié ou timeline)
 
-## 📄 6. TEMPLATE SYNTHÈSE FINALE
+```
+[À créer sous forme de timeline visuelle]
 
-### Structure attendue (5-10 pages max)
+Semaine 1 : Infrastructure & Détection (49% du temps)
+|████████████████████████████████████|
+Jour 1-2 : GOAD + Wazuh + Elastic
+Jour 3-4 : Ansible + Sysmon + OpenWEC
+Jour 5 : Suricata + Dashboard + Validation
 
-#### A. Page de garde
-- Titre du projet
-- Noms : Syrine Belkadhi, Maxine Botturi
-- Date : 30/01/2026
-- Logo établissement
+Semaine 2 : Tests & Analyse (51% du temps)
+|████████████████████████████████████|
+Jour 6-7 : Exegol + Attaques + Collecte traces
+Jour 8-9 : Analyse comparative + Rédaction
+Jour 10 : Finalisation + Soutenance
+```
 
----
+### Comparaison estimé vs réel
 
-#### B. Synthèse technique (3-4 pages)
+| Phase | Temps estimé | Temps réel | Écart | Commentaire |
+|-------|--------------|-----------|-------|-------------||
+| **Phase 1 : Infrastructure** | 65h | ~68h | +3h | Sous-estimation GOAD et problèmes réseau |
+| **Phase 2 : Tests & Analyse** | 53h | ~72h | +19h | Complexité analyse + rédaction sous-estimée |
+| **TOTAL** | **118h** | **140h** | **+22h** | Budget temps respecté grâce aux 2 personnes |
 
-**1. Descriptif de l'environnement déployé**
-- Schéma d'architecture réseau (1 page)
-- Liste des VMs et leurs rôles
-- Stack technique complète (tableau)
-- Choix techniques justifiés (SIEM, IDS, placement Suricata)
+### Points clés du suivi
 
-**2. Résultats des tests d'intrusion**
-- Scénarios d'attaque réalisés (tableau)
-- Détections obtenues par SIEM/IDS (tableau comparatif)
-- Traces collectées (exemples logs clés)
-- Taux de détection par outil (%)
+**Respect du planning :**
+- ✅ Jalon Semaine 1 atteint : Infrastructure complète opérationnelle le 24/01
+- ✅ Attaques lancées et traces collectées le 28/01
+- ⚠️ Légère pression sur la rédaction finale (29-30/01)
 
-**3. Analyse comparative de détection**
-- Wazuh : points forts / limites / cas d'usage
-- Elastic : points forts / limites / cas d'usage
-- Suricata : points forts / limites / cas d'usage
-- Chainsaw/Hayabusa : utilité en forensics
-- **Recommandations** : quel outil pour quel contexte
+**Charge de travail :**
+- Répartition équilibrée entre nous deux : Syrine (48%) et Maxine (52%)
+- Syrine concentrée sur la détection (SIEM + Ansible + gestion projet)
+- Maxine concentrée sur l'infrastructure et les tests (GOAD + Red Team + analyse)
 
----
-
-#### C. Gestion de projet (2-3 pages)
-
-**4. Bilan chiffré & graphique**
-- Tableau heures par personne (cf. section 4)
-- Graphique en barres : Syrine vs Maxine
-- Camembert : répartition par type de tâche
-- Timeline : progression hebdomadaire
-- Respect du budget temps : 42.5h / 135h utilisées
-
-**5. Méthodologie agile appliquée**
-- Découpage en 2 sprints
-- Gestion Trello : backlog → en cours → terminé
-- Stand-ups (si réalisés)
-- Rétrospective : ce qui a marché / ce qui n'a pas marché
+**Déviations par rapport au plan initial :**
+- Installation Elastic plus longue que prévu (+3h)
+- Déploiement GOAD plus complexe que prévu (+2h)
+- Dashboard Streamlit IA non planifié initialement mais ajouté pour valoriser OpenWEC
+- Temps de rédaction sous-estimé (+6h)
 
 ---
 
-#### D. Retour d'expérience (1-2 pages)
+## 5. Risques & Gestion
 
-**6. Compétences acquises**
+### Risques identifiés et gestion
 
-*Techniques :*
-- Déploiement Active Directory vulnérable (GOAD)
-- Configuration SIEM en environnement Windows
-- Automatisation Ansible
-- Analyse logs EVTX avec Sigma Rules
-- Cartographie AD avec BloodHound
-- Tests d'intrusion et méthodologie Red Team
+| # | Risque | Impact | Probabilité | Statut | Actions menées |
+|---|--------|--------|-------------|--------|----------------||
+| **R1** | GOAD ne se déploie pas correctement | Critique | Moyenne | ✅ Géré | Suivi strict documentation Orange Cyberdefense, snapshots VMs réguliers, +2h de débogage |
+| **R2** | Agents SIEM ne communiquent pas avec serveurs | Élevé | Élevée | ✅ Géré | Tests firewall Windows, validation config réseau, déploiement Ansible progressif |
+| **R3** | Problèmes réseau entre GOAD et infrastructure salle | Élevé | Moyenne | ⚠️ Survenu | Reconfiguration réseau VirtualBox, tests connectivité, +3h perdues |
+| **R4** | Retard déploiement Suricata | Moyen | Moyenne | ✅ Géré | Documentation en parallèle, tests de placement réseau optimisés |
+| **R5** | Manque de temps pour analyse comparative | Moyen | Élevée | ⚠️ Partiellement | Priorisation 2-3 scénarios d'attaque clés (Kerberos principalement) |
+| **R6** | Installation Elastic complexe | Moyen | Élevée | ⚠️ Survenu | Troubleshooting documenté (Windows/Debian), +3h supplémentaires |
+| **R7** | Synthèse finale bâclée (deadline 30/01) | Critique | Élevée | 🔄 En cours | Début rédaction dès 29/01, template préparé, répartition sections |
+| **R8** | Oubli réinitialisation matériel | Élevé | Faible | 📋 Planifié | Checklist finale créée, alarme rappel 30/01 après-midi |
 
-*Gestion de projet :*
-- Méthode agile appliquée
-- Estimation de charge
-- Gestion des risques
+### Problèmes rencontrés et solutions
+
+**Problème 1 : Connectivité réseau GOAD ↔ Infrastructure**
+- **Description :** Les VMs GOAD ne communiquaient pas correctement avec nos serveurs SIEM/IDS
+- **Impact :** Retard de 3h sur déploiement agents
+- **Solution appliquée :** Nous avons reconfiguré le mode réseau VirtualBox (bridge + NAT), validation ping/telnet systématique
+- **Leçon apprise :** Valider l'architecture réseau complète avant de déployer les agents
+
+**Problème 2 : Installation Elastic sous-estimée**
+- **Description :** Configuration Elasticsearch + Kibana + Fleet plus complexe que prévu
+- **Impact :** +3h par rapport à notre estimation initiale
+- **Solution appliquée :** Nous avons créé une documentation troubleshooting, tests sur Debian puis Windows
+- **Leçon apprise :** Prévoir du temps de débogage pour des outils non maîtrisés
+
+**Problème 3 : Compression du temps d'analyse**
+- **Description :** Phase 1 plus longue que prévu, réduisant le temps disponible pour l'analyse comparative
+- **Impact :** Limitation à 2-3 scénarios d'attaque au lieu de 5-6 prévus
+- **Solution appliquée :** Nous avons focalisé sur les attaques Kerberos (très représentatives), collecte traces précise
+- **Leçon apprise :** Prévoir une marge de sécurité de 20% sur les estimations
+
+### Décisions d'ajustement prises
+
+| Date | Décision | Justification | Impact |
+|------|----------|---------------|--------||
+| **22/01** | Ajout dashboard Streamlit IA pour OpenWEC | Valoriser le collecteur, faciliter analyse logs | +6h de dev mais gain en analyse |
+| **24/01** | Report finalisation Elastic à semaine 2 | Prioriser infrastructure GOAD fonctionnelle | Réorganisation planning semaine 2 |
+| **27/01** | Priorisation attaques Kerberos uniquement | Manque de temps pour scénarios multiples | Focus qualité > quantité |
+| **28/01** | Répartition rédaction synthèse 50/50 | Deadline serrée 30/01 | Parallélisation rédaction |
+
+### Gestion des imprévus
+
+**Stratégies que nous avons appliquées :**
+- **Communication quotidienne** : Point rapide chaque matin pour identifier blocages
+- **Priorisation dynamique** : Ajustement Trello en temps réel selon contraintes
+- **Documentation continue** : Rédaction procédures au fur et à mesure pour gagner du temps semaine 2
+- **Entraide technique** : Nous nous sommes dépannées mutuellement sur les blocages
+
+**Outils de mitigation :**
+- Snapshots VirtualBox réguliers (tous les soirs)
+- Scripts de déploiement versionnés sur Git
+- Documentation troubleshooting centralisée dans DOCS/04_troubleshooting/
+
+---
+
+## 6. Rétrospective : Win/Fail & Leçons apprises
+
+### Ce qui a bien fonctionné (Wins) 🎉
+
+| Aspect | Description | Impact positif |
+|--------|-------------|----------------||
+| **Organisation GitHub** | Structure de dossiers claire dès le départ (DOCS, CONFIGS, AUTOMATION, LOGS) | Gain de temps énorme, pas de perte de fichiers, collaboration fluide |
+| **Répartition Blue/Red Team** | Séparation des rôles claire : Syrine (détection) / Maxine (infra + attaque) | Travail en parallèle efficace semaine 1, expertise ciblée |
+| **Automatisation Ansible** | Déploiement agents Wazuh et Elastic automatisé sur toutes les VMs | Reproductibilité, gain de temps, moins d'erreurs manuelles |
+| **GOAD déployé rapidement** | Environnement AD vulnérable opérationnel en 1 jour | Respect du planning, base solide pour la suite |
+| **Documentation continue** | Procédures rédigées au fur et à mesure des installations | Pas de stress en fin de projet, annexes prêtes |
+| **Dashboard Streamlit IA** | Innovation non prévue initialement pour valoriser OpenWEC | Différenciation du projet, démo visuelle impressionnante |
+| **Gestion Trello efficace** | Kanban simple et clair, mis à jour régulièrement | Vision d'avancement partagée, pas de tâches oubliées |
+| **Communication quotidienne** | Points rapides chaque matin au labo | Résolution rapide des blocages, entraide technique |
+| **Collaboration étroite** | Travail réellement ensemble sur l'ensemble du projet | Complémentarité des compétences, entraide constante |
+
+### Ce qui n'a pas fonctionné (Fails) ❌
+
+| Aspect | Description | Impact négatif | Amélioration possible |
+|--------|-------------|----------------|----------------------|
+| *[À compléter en fin de projet]* | | | |
+| | | | |
+| | | | |
+| | | | |
+
+### Compétences développées
+
+#### Compétences techniques
+
+**Syrine :**
+- Déploiement et configuration SIEM (Wazuh, Elastic Stack)
+- Automatisation avec Ansible (playbooks pour agents Wazuh et Elastic)
+- Configuration Sysmon pour monitoring Windows avancé
+- Analyse de logs EVTX et détection d'intrusions
+- Gestion de projet agile
+
+**Maxine :**
+- Déploiement infrastructure AD complexe (GOAD)
+- Configuration IDS réseau (Suricata + règles Sigma)
+- Collecteur de logs Windows (OpenWEC)
+- Développement dashboard IA avec Streamlit
+- Méthodologie Red Team (Exegol, attaques Kerberos, mouvement latéral)
+- Analyse comparative de solutions de sécurité
+
+**Ensemble :**
+- Gestion de projet agile (phases, backlog, Kanban)
+- Documentation technique structurée
 - Travail en binôme Blue/Red Team
+- Intégration de solutions hétérogènes
+- Troubleshooting avancé
 
-**7. Win / Fail**
+#### Compétences transversales
 
-*🎉 Wins :*
-- GOAD déployé fonctionnel en 1 journée
-- Wazuh opérationnel avec agents connectés
-- Automatisation Ansible réussie
-- Organisation Git/Trello claire
+- **Gestion du temps** : Respect d'une deadline serrée avec livrables multiples
+- **Priorisation** : Choix des tâches critiques vs "nice to have"
+- **Adaptabilité** : Ajustement du plan face aux imprévus
+- **Collaboration** : Coordination Blue/Red Team efficace et travail d'équipe constant
+- **Communication** : Documentation claire pour autrui
+- **Autonomie** : Résolution de problèmes sans support constant
 
-*❌ Fails :*
-- Sous-estimation temps configuration Elastic
-- Problèmes réseau entre GOAD et salle
-- Retard sur déploiement Suricata
-- Manque de temps pour tests d'intrusion variés
+### Recommandations pour un projet similaire
 
-**8. Questions/Réponses avec l'expert**
-- Liste des questions posées
-- Réponses apportées
-- Impact sur le projet
+**Pour la planification :**
+1. Ajouter systématiquement 20-30% de marge sur les estimations
+2. Valider l'architecture réseau complète AVANT déploiement
+3. Prévoir 2 jours pleins minimum pour la rédaction finale
+4. Définir les critères d'acceptation de chaque jalon dès le départ
 
----
+**Pour l'organisation :**
+1. Formaliser les stand-ups quotidiens (même 5 min écrites)
+2. Créer des snapshots VMs après chaque étape critique
+3. Documenter en parallèle de l'installation (pas après)
+4. Utiliser un système de branches Git pour les expérimentations
 
-#### E. Conclusion (0.5 page)
-- Objectifs atteints / partiellement atteints
-- Apports pédagogiques principaux
-- Axes d'amélioration pour un déploiement réel
-
----
-
-### Annexes (documents séparés)
-
-**Annexe A : Documentation d'installation**
-- Procédure déploiement GOAD (auteur, durée)
-- Procédure installation Wazuh (auteur, durée)
-- Procédure installation Elastic (auteur, durée)
-- Procédure installation OpenWEC (auteur, durée)
-- Procédure installation Suricata (auteur, durée)
-- Procédure configuration Sysmon (auteur, durée)
-- Procédure BloodHound/SharpHound (auteur, durée)
-
-**Annexe B : Configurations**
-- Fichiers config Wazuh (ossec.conf)
-- Fichiers config Elastic (elasticsearch.yml, kibana.yml)
-- Config Sysmon (XML)
-- Sigma rules utilisées
-- Playbooks Ansible
-
-**Annexe C : Traces & Logs**
-- Exemples logs EVTX significatifs
-- Alertes SIEM (screenshots)
-- Graphes BloodHound (chemins d'attaque)
-- Résultats Chainsaw/Hayabusa
-
-**Annexe D : Dépôt Git**
-- Lien GitHub : https://github.com/Radiant-Maxine/SAE_5C03_Nixie
-- Structure du repo
-- Commits principaux avec messages explicatifs
+**Pour la technique :**
+1. Tester la communication réseau avant installation massive
+2. Automatiser dès que possible (Ansible, scripts)
+3. Privilégier la qualité (2-3 scénarios bien documentés) vs quantité
+4. Prévoir du temps de troubleshooting (20% du temps prévu)
 
 ---
 
-## 📝 7. NOTES & DÉCISIONS IMPORTANTES
+## 7. Conclusion
 
-### Décisions d'architecture
-- **Date:** 20/01/2026
-- **Décision:** Déploiement Suricata en mode bridge entre VirtualBox et réseau physique
-- **Justification:** Maximiser la visibilité du trafic AD
-- **Impact:** Configuration VirtualBox avancée nécessaire
+Notre projet de 10 jours nous a permis de déployer avec succès un environnement de détection complet (GOAD + Wazuh + Elastic + OpenWEC + Suricata) et d'analyser son efficacité face à des attaques réelles. 
 
----
+La méthodologie agile que nous avons appliquée, combinée à une répartition claire des rôles, une collaboration étroite et à l'automatisation via Ansible, nous a permis de respecter la deadline du 30 janvier malgré un planning serré et des imprévus techniques.
 
-- **Date:** 21/01/2026
-- **Décision:** Utilisation OpenWEC avec dashboard IA (non SIEM classique)
-- **Justification:** Innovation, collecteur spécialisé Windows plus léger
-- **Impact:** Nécessite formation supplémentaire sur l'outil
+Au-delà des compétences techniques en cybersécurité (SIEM, IDS, Red Team) que nous avons développées, ce projet a renforcé nos capacités en gestion de projet, priorisation et adaptation face aux contraintes. La principale leçon que nous retenons est l'importance de prévoir des marges sur les estimations et de documenter en continu plutôt qu'à posteriori.
+
+Les livrables attendus (synthèse technique, annexes, dépôt GitHub structuré) sont prêts pour la soutenance, démontrant notre capacité à mener un projet technique complexe en autonomie.
 
 ---
 
-- **Date:** 22/01/2026
-- **Décision:** Automatisation déploiement agents via Ansible (pas GPO)
-- **Justification:** Reproductibilité, versionning, skills DevOps
-- **Impact:** Temps dev playbooks mais gain long terme
-
----
-
-### Questions pour l'expert senior
-
-**Session 1 - Date: __/__/2026**
-- Q1: [À compléter]
-- R1: [À compléter]
-
-**Session 2 - Date: __/__/2026**
-- Q2: [À compléter]
-- R2: [À compléter]
-
----
-
-### Changelog du projet
-
-| Date | Événement | Impact |
-|------|-----------|--------|
-| 19/01 | Kick-off projet, création repo | - |
-| 20/01 | GOAD déployé | +2h vs estimation |
-| 21/01 | Wazuh connecté aux machines | ✅ Milestone atteint |
-| 22/01 | OpenWEC opérationnel | ✅ Milestone atteint |
-| 23/01 | Sysmon déployé sur toutes VMs | ✅ |
-| 28/01 | [En cours] | - |
-
----
-
-## ✅ 8. CHECKLIST FINALE (30/01/2026)
-
-### Avant soutenance
-- [ ] Synthèse finale rédigée (5-10 pages)
-- [ ] Tous les graphiques créés (bilan chiffré)
-- [ ] Annexes complètes avec auteurs & durées
-- [ ] Dépôt Git à jour avec commits explicites
-- [ ] Screenshots/traces d'attaques collectés
-- [ ] Comparatif efficacité SIEM finalisé
-- [ ] Win/Fail documentés
-- [ ] Questions/Réponses expert compilées
-- [ ] Support de présentation prêt
-
-### Après soutenance
-- [ ] ⚠️ **CRITIQUE:** Réinitialiser tout le matériel (VMs, snapshots, configs)
-- [ ] Vérifier que rien ne reste sur les machines physiques
-- [ ] Confirmer auprès de l'enseignant la réinitialisation
-
----
-
-## 🎯 OBJECTIFS RESTANTS (Priorisation)
-
-### 🔴 Priorité CRITIQUE (avant 29/01)
-1. Finaliser configuration Elastic + agents
-2. Déployer Suricata fonctionnel
-3. Installer Chainsaw/Hayabusa
-4. Installer BloodHound + cartographier AD
-5. Lancer **au moins 2-3 scénarios d'attaque** représentatifs
-
-### 🟠 Priorité HAUTE (29/01)
-1. Collecter toutes les traces/détections
-2. Analyser alertes SIEM/IDS
-3. Créer tableau comparatif efficacité
-4. Commencer rédaction synthèse (structure + intro)
-
-### 🟡 Priorité MOYENNE (30/01 matin)
-1. Finaliser synthèse + graphiques
-2. Rédiger annexes techniques
-3. Compiler Win/Fail
-4. Préparer support soutenance
-
-### 🟢 Priorité BASSE (30/01 après-midi)
-1. Soutenance
-2. Réinitialisation matériel
-3. Rendu final
-
----
-
-**Dernière mise à jour:** 28/01/2026  
-**Statut global:** 🟡 En bonne voie, vigilance sur deadline 30/01  
-**Next steps:** Finir config SIEM, lancer Red Team, anticiper rédaction synthèse
+**Dernière mise à jour :** 29/01/2026  
+**Statut :** Document finalisé, prêt pour le rendu
