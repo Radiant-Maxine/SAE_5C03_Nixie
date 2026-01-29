@@ -117,7 +117,7 @@ Nous avons mené le projet en méthode agile sur 2 phases d'une semaine chacune,
 ### Budget temps disponible
 
 | Période | Nombre de jours | Heures par jour | Total par personne | Total équipe |
-|---------|-----------------|-----------------|-------------------|--------------||
+|---------|-----------------|-----------------|-------------------|--------------|
 | Semaine 1 | 4j + 1j court | 4×7h30 + 1×3h45 | 33h45 | 67h30 |
 | Semaine 2 | 4j + 1j court | 4×7h30 + 1×3h45 | 33h45 | 67h30 |
 | **TOTAL** | **10 jours** | - | **67h30** | **135h** |
@@ -127,7 +127,7 @@ Nous avons mené le projet en méthode agile sur 2 phases d'une semaine chacune,
 #### Phase 1 : Infrastructure & Détection (Semaine 1)
 
 | Tâche | Responsable | Estimation | Dépendances |
-|-------|-------------|-----------|-------------||
+|-------|-------------|-----------|-------------|
 | Initialisation repo GitHub + structure | Les deux | 2h | - |
 | Schéma architecture réseau | Les deux | 3h | - |
 | Déploiement GOAD (5 VMs Windows) | Maxine | 8h | Schéma réseau |
@@ -147,7 +147,7 @@ Nous avons mené le projet en méthode agile sur 2 phases d'une semaine chacune,
 #### Phase 2 : Tests & Analyse (Semaine 2)
 
 | Tâche | Responsable | Estimation | Dépendances |
-|-------|-------------|-----------|-------------||
+|-------|-------------|-----------|-------------|
 | Installation Exegol | Les deux | 3h | - |
 | Installation BloodHound/SharpHound | Maxine | 4h | Exegol |
 | Cartographie AD | Maxine | 3h | BloodHound |
@@ -191,7 +191,7 @@ Nous avons mené le projet en méthode agile sur 2 phases d'une semaine chacune,
 ### Temps de travail par personne
 
 | Période | Syrine | Maxine | Total équipe |
-|---------|--------|--------|--------------||
+|---------|--------|--------|---------------|
 | **Semaine 1** (20-24 janvier) | 32h | 36h | 68h |
 | **Semaine 2** (27-30 janvier) | 35h30 | 36h30 | 72h |
 | **TOTAL PROJET** | **67h30** | **72h30** | **140h** |
@@ -199,7 +199,7 @@ Nous avons mené le projet en méthode agile sur 2 phases d'une semaine chacune,
 ### Répartition du temps par catégorie de tâches
 
 | Catégorie | Syrine | Maxine | Total | % du projet |
-|-----------|--------|--------|-------|-------------||
+|-----------|--------|--------|-------|-------------|
 | **Infrastructure & GOAD** | 3h | 17h | 20h | 14% |
 | **SIEM (Wazuh + Elastic)** | 26h | 0h | 26h | 19% |
 | **Collecteur logs (OpenWEC)** | 0h | 13h | 13h | 9% |
@@ -264,7 +264,7 @@ Jour 10 : Finalisation + Soutenance
 ### Comparaison estimé vs réel
 
 | Phase | Temps estimé | Temps réel | Écart | Commentaire |
-|-------|--------------|-----------|-------|-------------||
+|-------|--------------|-----------|-------|-------------|
 | **Phase 1 : Infrastructure** | 65h | ~68h | +3h | Sous-estimation GOAD et problèmes réseau |
 | **Phase 2 : Tests & Analyse** | 53h | ~72h | +19h | Complexité analyse + rédaction sous-estimée |
 | **TOTAL** | **118h** | **140h** | **+22h** | Budget temps respecté grâce aux 2 personnes |
@@ -294,7 +294,7 @@ Jour 10 : Finalisation + Soutenance
 ### Risques identifiés et gestion
 
 | # | Risque | Impact | Probabilité | Statut | Actions menées |
-|---|--------|--------|-------------|--------|----------------||
+|---|--------|--------|-------------|--------|----------------|
 | **R1** | GOAD ne se déploie pas correctement | Critique | Moyenne | ✅ Géré | Suivi strict documentation Orange Cyberdefense, snapshots VMs réguliers, +2h de débogage |
 | **R2** | Agents SIEM ne communiquent pas avec serveurs | Élevé | Élevée | ✅ Géré | Tests firewall Windows, validation config réseau, déploiement Ansible progressif |
 | **R3** | Problèmes réseau entre GOAD et infrastructure salle | Élevé | Moyenne | ⚠️ Survenu | Reconfiguration réseau VirtualBox, tests connectivité, +3h perdues |
@@ -327,7 +327,7 @@ Jour 10 : Finalisation + Soutenance
 ### Décisions d'ajustement prises
 
 | Date | Décision | Justification | Impact |
-|------|----------|---------------|--------||
+|------|----------|---------------|--------|
 | **22/01** | Ajout dashboard Streamlit IA pour OpenWEC | Valoriser le collecteur, faciliter analyse logs | +6h de dev mais gain en analyse |
 | **24/01** | Report finalisation Elastic à semaine 2 | Prioriser infrastructure GOAD fonctionnelle | Réorganisation planning semaine 2 |
 | **27/01** | Priorisation attaques Kerberos uniquement | Manque de temps pour scénarios multiples | Focus qualité > quantité |
@@ -353,7 +353,7 @@ Jour 10 : Finalisation + Soutenance
 ### Ce qui a bien fonctionné (Wins) 🎉
 
 | Aspect | Description | Impact positif |
-|--------|-------------|----------------||
+|--------|-------------|----------------|
 | **Organisation GitHub** | Structure de dossiers claire dès le départ (DOCS, CONFIGS, AUTOMATION, LOGS) | Gain de temps énorme, pas de perte de fichiers, collaboration fluide |
 | **Répartition Blue/Red Team** | Séparation des rôles claire : Syrine (détection) / Maxine (infra + attaque) | Travail en parallèle efficace semaine 1, expertise ciblée |
 | **Automatisation Ansible** | Déploiement agents Wazuh et Elastic automatisé sur toutes les VMs | Reproductibilité, gain de temps, moins d'erreurs manuelles |
