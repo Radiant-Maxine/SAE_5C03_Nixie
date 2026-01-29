@@ -216,11 +216,11 @@ Nous avons mené le projet sur 2 phases d'une semaine chacune, adaptée aux cont
 
 #### Graphique 1 : Timeline de progression hebdomadaire
 
-![Timeline de progression](images/graphique2_timeline.png)
+![Timeline de progression](graphique2_timeline.png)
 
 #### Graphique 2 : Répartition du temps par personne
 
-![Répartition par personne](images/graphique3_barres.png)
+![Répartition par personne](graphique3_barres.png)
 
 ### Comparaison estimé vs réel
 
