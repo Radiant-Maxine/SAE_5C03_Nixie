@@ -1,7 +1,8 @@
 # GESTION DE PROJET - SAE 5C03 Cybersécurité
 
-**Projet:** Proof of Concept Blue Team / Red Team - Environnement GOAD  
+**SAE:** Proof of Concept Blue Team / Red Team - Environnement GOAD  
 **Équipe:**  Maxine Botturi et Syrine Benkadhi 
+
 **Durée:** 10 jours (20/01/2026 - 30/01/2026)  
 
 ---
@@ -53,7 +54,7 @@ Cette répartition nous a permis de travailler en parallèle durant la phase d'i
 
 ### Approche agile
 
-Nous avons mené le projet en méthode agile sur 2 phases d'une semaine chacune, adaptée aux contraintes de temps et à la taille de notre équipe.
+Nous avons mené le projet sur 2 phases d'une semaine chacune, adaptée aux contraintes de temps et à la taille de notre équipe.
 
 | Phase | Période | Objectif principal | Durée |
 |--------|---------|-------------------|-------|
@@ -73,12 +74,12 @@ Nous avons mené le projet en méthode agile sur 2 phases d'une semaine chacune,
 | **Infrastructure** | - | GOAD (5 VMs) |
 | **Attaque** | Exegol (pipx) | Exegol (pip/Docker), Tests intrusion |
 | **Analyse** | Détections SIEM | Analyse comparative, Dashboard IA |
-| **Gestion projet** | rapport gestion de projet | - |
+| **Gestion projet** | Rapport gestion de projet | - |
 
 ### Outils de gestion
 
 | Outil | Usage | Avantages |
-|-------|-------|-----------||
+|-------|-------|-----------|
 | **Trello** | Gestion des tâches (Kanban : À faire → En cours → Terminé) | Visualisation claire de l'avancement |
 | **GitHub** | Dépôt central (code, configs, docs, logs) | Traçabilité par commits, organisation structurée |
 | **Réunions quotidiennes** | Synchronisation d'équipe et résolution de blocages | Réactivité face aux problèmes techniques |
@@ -89,7 +90,7 @@ Nous avons mené le projet en méthode agile sur 2 phases d'une semaine chacune,
 
 **Objectif :** Environnement complet avec toutes les solutions opérationnelles
 
-**Jalons clés :**
+**Étapes importantes :**
 - ✅ Jour 1 (20/01) : GOAD déployé + Wazuh installé
 - ✅ Jour 2 (21/01) : Wazuh configuré + agents connectés
 - ✅ Jour 3 (22/01) : Ansible opérationnel + Elastic en cours
@@ -100,7 +101,7 @@ Nous avons mené le projet en méthode agile sur 2 phases d'une semaine chacune,
 
 **Objectif :** Tests d'intrusion + analyse comparative + livrables finaux
 
-**Jalons clés :**
+**Étapes importantes :**
 - ✅ Jour 6 (27/01) : OpenWEC + Dashboard IA + Elastic finalisé + Suricata configuré
 - ✅ Jour 7 (28/01) : Exegol + premières attaques Kerberos + traces collectées
 - 🔄 Jour 8 (29/01) : Analyse comparative en cours + rédaction
@@ -110,7 +111,7 @@ Nous avons mené le projet en méthode agile sur 2 phases d'une semaine chacune,
 
 ## 3. Planification initiale
 
-### Budget temps disponible
+
 
 | Période | Nombre de jours | Heures par jour | Total par personne | Total équipe |
 |---------|-----------------|-----------------|-------------------|--------------|
