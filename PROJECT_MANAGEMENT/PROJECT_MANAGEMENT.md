@@ -1,4 +1,4 @@
-# GESTION DE PROJET - SAE 5C03 Cybersécurité
+# GESTION DE PROJET - SAE 5C03 
 
 **SAE:** Proof of Concept Blue Team / Red Team - Environnement GOAD  
 **Équipe:**  Maxine Botturi et Syrine Benkadhi 
@@ -11,7 +11,7 @@
 
 ### Contexte du projet
 
-Dans le cadre de la SAE 5C03 Cybersécurité, ce projet consiste à déployer un environnement de détection d'intrusions combinant approches Blue Team et Red Team. Notre objectif est d'évaluer l'efficacité de plusieurs solutions de détection (SIEM, IDS, collecteurs de logs) face à des scénarios d'attaque sur un Active Directory vulnérable.
+Dans le cadre de la SAE 5C03 Cybersécurité, ce projet vise à déployer un environnement de détection d’intrusions combinant des approches Blue Team et Red Team. L’objectif est d’évaluer l’efficacité de plusieurs solutions de détection (SIEM, IDS, collecteurs de logs) face à différents scénarios d’attaque ciblant un Active Directory volontairement vulnérable.
 
 ### Objectifs et livrables
 
@@ -213,52 +213,14 @@ Nous avons mené le projet sur 2 phases d'une semaine chacune, adaptée aux cont
 
 ### Graphiques à créer pour le rendu
 
-#### Graphique 1 : Répartition du temps par personne (Diagramme en barres)
 
-```
-[À générer avec Excel/Python/autre outil]
+#### Graphique 1 : Timeline de progression hebdomadaire
 
-Axes :
-- X : Catégories de tâches (Infrastructure, SIEM, IDS, Red Team, etc.)
-- Y : Heures de travail
-- Deux barres par catégorie : Syrine (bleu) vs Maxine (rouge)
-```
+![Timeline de progression](images/graphique2_timeline.png)
 
-#### Graphique 2 : Répartition globale par type de tâche (Camembert)
+#### Graphique 2 : Répartition du temps par personne
 
-```
-[À générer avec Excel/Python/autre outil]
-
-Parts du camembert :
-- SIEM : 19%
-- Infrastructure : 14%
-- Documentation : 11%
-- IDS & Détection : 11%
-- Red Team : 11%
-- Analyse & Tests : 11%
-- Collecteur logs : 9%
-- Dashboard : 5%
-- Automatisation : 4%
-- Gestion projet : 4%
-```
-
-#### Graphique 3 : Timeline de progression hebdomadaire (Gantt simplifié ou timeline)
-
-```
-[À créer sous forme de timeline visuelle]
-
-Semaine 1 : Infrastructure & Détection (49% du temps)
-|████████████████████████████████████|
-Jour 1-2 : GOAD + Wazuh + Elastic
-Jour 3-4 : Ansible + Sysmon + OpenWEC
-Jour 5 : Suricata + Dashboard + Validation
-
-Semaine 2 : Tests & Analyse (51% du temps)
-|████████████████████████████████████|
-Jour 6-7 : Exegol + Attaques + Collecte traces
-Jour 8-9 : Analyse comparative + Rédaction
-Jour 10 : Finalisation + Soutenance
-```
+![Répartition par personne](images/graphique3_barres.png)
 
 ### Comparaison estimé vs réel
 
@@ -371,5 +333,4 @@ Les livrables attendus (synthèse technique, annexes, dépôt GitHub structuré)
 
 ---
 
-**Dernière mise à jour :** 29/01/2026  
-**Statut :** Document finalisé, prêt pour le rendu
+
