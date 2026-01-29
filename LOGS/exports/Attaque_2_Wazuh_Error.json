@@ -1,0 +1,71 @@
+{
+  "_index": "wazuh-alerts-4.x-2026.01.29",
+  "_id": "70y4CZwB0tRFSg3lisLO",
+  "_score": null,
+  "_source": {
+    "input": {
+      "type": "log"
+    },
+    "agent": {
+      "ip": "10.203.19.63",
+      "name": "GOAD-63",
+      "id": "041"
+    },
+    "manager": {
+      "name": "wazuh-server"
+    },
+    "data": {
+      "win": {
+        "eventdata": {
+          "data": "MEEREEN, %%5",
+          "binary": "220000C0"
+        },
+        "system": {
+          "eventRecordID": "7374",
+          "eventID": "5805",
+          "computer": "meereen.essos.local",
+          "task": "0",
+          "keywords": "0x80000000000000",
+          "level": "2",
+          "severityValue": "ERROR",
+          "channel": "System",
+          "message": "\"The session setup from the computer MEEREEN failed to authenticate. The following error occurred: \r\nAccess is denied.\"",
+          "systemTime": "2026-01-29T12:26:53.853162900Z",
+          "providerName": "NETLOGON"
+        }
+      }
+    },
+    "rule": {
+      "firedtimes": 2,
+      "mail": false,
+      "level": 5,
+      "description": "Windows System error event",
+      "groups": [
+        "windows",
+        "windows_system",
+        "system_error"
+      ],
+      "id": "61102",
+      "gpg13": [
+        "4.3"
+      ],
+      "gdpr": [
+        "IV_35.7.d"
+      ]
+    },
+    "location": "EventChannel",
+    "decoder": {
+      "name": "windows_eventchannel"
+    },
+    "id": "1769689613.94345054",
+    "timestamp": "2026-01-29T12:26:53.984+0000"
+  },
+  "fields": {
+    "timestamp": [
+      "2026-01-29T12:26:53.984Z"
+    ]
+  },
+  "sort": [
+    1769689613984
+  ]
+}
