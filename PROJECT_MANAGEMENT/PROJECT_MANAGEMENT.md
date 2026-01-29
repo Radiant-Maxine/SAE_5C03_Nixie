@@ -1,9 +1,8 @@
 # GESTION DE PROJET - SAE 5C03 Cybersécurité
 
 **Projet:** Proof of Concept Blue Team / Red Team - Environnement GOAD  
-**Équipe:** Syrine Belkadhi (Blue Team) + Maxine Botturi (Red Team)  
+**Équipe:**  Maxine Botturi et Syrine Benkadhi 
 **Durée:** 10 jours (20/01/2026 - 30/01/2026)  
-**Soutenance:** 30/01/2026
 
 ---
 
@@ -11,7 +10,7 @@
 
 ### Contexte du projet
 
-Notre projet, réalisé dans le cadre de la SAE 5C03 Cybersécurité, consiste à déployer un environnement de détection d'intrusions combinant approches Blue Team et Red Team. Notre objectif est d'évaluer l'efficacité de plusieurs solutions de détection (SIEM, IDS, collecteurs de logs) face à des scénarios d'attaque sur un Active Directory vulnérable.
+Dans le cadre de la SAE 5C03 Cybersécurité, ce projet consiste à déployer un environnement de détection d'intrusions combinant approches Blue Team et Red Team. Notre objectif est d'évaluer l'efficacité de plusieurs solutions de détection (SIEM, IDS, collecteurs de logs) face à des scénarios d'attaque sur un Active Directory vulnérable.
 
 ### Objectifs et livrables
 
@@ -24,9 +23,6 @@ Notre projet vise à :
 
 Les livrables attendus comprennent une synthèse technique de 5 à 10 pages, des annexes techniques détaillées, un rapport de gestion de projet avec bilan chiffré, un dépôt GitHub structuré, et une soutenance prévue le 30 janvier 2026.
 
-### Contraintes
-
-Nous avons travaillé sur 10 jours ouvrés du 20 au 30 janvier 2026, soit environ 70 heures chacune. La deadline non négociable du 30 janvier inclut la soutenance et la réinitialisation obligatoire du matériel. Nous devions nous partager les ressources du laboratoire avec d'autres projets. La complexité technique de l'environnement GOAD et l'intégration de multiples solutions hétérogènes ont représenté des défis majeurs.
 
 ### Organisation de l'équipe
 
@@ -36,7 +32,7 @@ Nous avons réparti le travail selon nos domaines de compétence tout en mainten
 - Wazuh (installation, configuration)
 - Elastic Stack (installation, configuration)
 - Déploiement des agents via Ansible (Wazuh et Elastic)
-- Configuration Sysmon
+- Configuration remonter des logs Sysmon
 - Exegol (installation via pipx)
 - Analyse des alertes et détections
 - Gestion de projet
@@ -49,7 +45,7 @@ Nous avons réparti le travail selon nos domaines de compétence tout en mainten
 - Tests d'intrusion et collecte de traces
 - Analyse comparative des solutions
 
-Cette répartition nous a permis de travailler en parallèle durant la phase d'installation (semaine 1) tout en collaborant étroitement pour l'analyse comparative (semaine 2).
+Cette répartition nous a permis de travailler en parallèle durant la phase d'installation (semaine 1) tout en collaborant pour l'analyse comparative (semaine 2).
 
 ---
 
@@ -73,11 +69,11 @@ Nous avons mené le projet en méthode agile sur 2 phases d'une semaine chacune,
 | **SIEM** | Wazuh, Elastic | - |
 | **Collecteur logs** | - | OpenWEC |
 | **IDS** | - | Suricata |
-| **Monitoring** | Sysmon, Ansible | - |
+| **Monitoring** | Logs Sysmon, Ansible | Sysmon |
 | **Infrastructure** | - | GOAD (5 VMs) |
 | **Attaque** | Exegol (pipx) | Exegol (pip/Docker), Tests intrusion |
 | **Analyse** | Détections SIEM | Analyse comparative, Dashboard IA |
-| **Gestion projet** | Pilotage complet | - |
+| **Gestion projet** | rapport gestion de projet | - |
 
 ### Outils de gestion
 
