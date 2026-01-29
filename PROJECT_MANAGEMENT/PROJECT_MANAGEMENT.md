@@ -33,7 +33,7 @@ Nous avons réparti le travail selon nos domaines de compétence tout en mainten
 - Wazuh (installation, configuration)
 - Elastic Stack (installation, configuration)
 - Déploiement des agents via Ansible (Wazuh et Elastic)
-- Configuration remonter des logs Sysmon
+- Remontée des logs Sysmon sur Wazuh
 - Exegol (installation via pipx)
 - Analyse des alertes et détections
 - Gestion de projet
@@ -41,6 +41,7 @@ Nous avons réparti le travail selon nos domaines de compétence tout en mainten
 **Red Team & Infrastructure (Maxine) :**
 - Déploiement environnement GOAD
 - OpenWEC et Suricata
+- Configuration Sysmon
 - Dashboard Streamlit avec IA
 - Exegol (installation via pip et Docker)
 - Tests d'intrusion et collecte de traces
@@ -70,7 +71,7 @@ Nous avons mené le projet sur 2 phases d'une semaine chacune, adaptée aux cont
 | **SIEM** | Wazuh, Elastic | - |
 | **Collecteur logs** | - | OpenWEC |
 | **IDS** | - | Suricata |
-| **Monitoring** | Logs Sysmon, Ansible | Sysmon |
+| **Monitoring** | Remontée logs Sysmon, Ansible | Configuration Sysmon |
 | **Infrastructure** | - | GOAD (5 VMs) |
 | **Attaque** | Exegol (pipx) | Exegol (pip/Docker), Tests intrusion |
 | **Analyse** | Détections SIEM | Analyse comparative, Dashboard IA |
@@ -133,13 +134,14 @@ Nous avons mené le projet sur 2 phases d'une semaine chacune, adaptée aux cont
 | Installation Elastic Stack | Syrine | 5h | - |
 | Configuration Elastic | Syrine | 5h | Installation Elastic |
 | Installation OpenWEC | Maxine | 7h | GOAD opérationnel |
-| Configuration Sysmon | Syrine | 4h | GOAD opérationnel |
+| Configuration Sysmon | Maxine | 4h | GOAD opérationnel |
+| Remontée logs Sysmon sur Wazuh | Syrine | 3h | Sysmon configuré |
 | Playbooks Ansible agents | Syrine | 6h | Wazuh/Elastic installés |
 | Installation Suricata | Maxine | 5h | - |
 | Configuration Suricata + Sigma Rules | Maxine | 3h | Installation Suricata |
 | Dashboard Streamlit IA | Maxine | 6h | OpenWEC opérationnel |
 
-**Total estimé Phase 1 : ~65h**
+**Total estimé Phase 1 : ~68h**
 
 #### Phase 2 : Tests & Analyse (Semaine 2)
 
@@ -200,7 +202,7 @@ Nous avons mené le projet sur 2 phases d'une semaine chacune, adaptée aux cont
 | **Infrastructure & GOAD** | 3h | 17h | 20h | 14% |
 | **SIEM (Wazuh + Elastic)** | 26h | 0h | 26h | 19% |
 | **Collecteur logs (OpenWEC)** | 0h | 13h | 13h | 9% |
-| **IDS & Détection (Suricata, Sysmon)** | 7h | 9h | 16h | 11% |
+| **IDS & Détection (Suricata, Sysmon)** | 4h | 12h | 16h | 11% |
 | **Automatisation (Ansible)** | 6h | 0h | 6h | 4% |
 | **Dashboard IA** | 0h | 7h | 7h | 5% |
 | **Red Team (Exegol, attaques)** | 3h | 13h | 16h | 11% |
@@ -262,9 +264,9 @@ Jour 10 : Finalisation + Soutenance
 
 | Phase | Temps estimé | Temps réel | Écart | Commentaire |
 |-------|--------------|-----------|-------|-------------|
-| **Phase 1 : Infrastructure** | 65h | ~68h | +3h | Sous-estimation GOAD et problèmes réseau |
+| **Phase 1 : Infrastructure** | 68h | ~68h | 0h | Estimation correcte malgré problèmes réseau |
 | **Phase 2 : Tests & Analyse** | 53h | ~72h | +19h | Complexité analyse + rédaction sous-estimée |
-| **TOTAL** | **118h** | **140h** | **+22h** | Budget temps respecté grâce aux 2 personnes |
+| **TOTAL** | **121h** | **140h** | **+19h** | Budget temps respecté grâce aux 2 personnes |
 
 ### Points clés du suivi
 
@@ -377,13 +379,14 @@ Jour 10 : Finalisation + Soutenance
 **Syrine :**
 - Déploiement et configuration SIEM (Wazuh, Elastic Stack)
 - Automatisation avec Ansible (playbooks pour agents Wazuh et Elastic)
-- Configuration Sysmon pour monitoring Windows avancé
+- Remontée logs Sysmon sur Wazuh
 - Analyse de logs EVTX et détection d'intrusions
 - Gestion de projet agile
 
 **Maxine :**
 - Déploiement infrastructure AD complexe (GOAD)
 - Configuration IDS réseau (Suricata + règles Sigma)
+- Configuration Sysmon pour monitoring Windows
 - Collecteur de logs Windows (OpenWEC)
 - Développement dashboard IA avec Streamlit
 - Méthodologie Red Team (Exegol, attaques Kerberos, mouvement latéral)
