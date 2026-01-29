@@ -218,9 +218,9 @@ Nous avons mené le projet sur 2 phases d'une semaine chacune, adaptée aux cont
 
 ![Timeline de progression](graphique2_timeline.png)
 
-#### Graphique 2 : Répartition du temps par personne
+#### Graphique 1 : Répartition globale par type de tâche
 
-![Répartition par personne](graphique3_barres.png)
+![Répartition globale par type de tâche](graphique1_camembert.png)
 
 ### Comparaison estimé vs réel
 
