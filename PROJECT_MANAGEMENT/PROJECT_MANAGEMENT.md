@@ -2,8 +2,8 @@
 
 **SAE:** Proof of Concept Blue Team / Red Team - Environnement GOAD  
 **Équipe:**  Maxine Botturi et Syrine Benkadhi 
-
 **Durée:** 10 jours (20/01/2026 - 30/01/2026)  
+
 
 ---
 
@@ -22,7 +22,7 @@ Notre projet vise à :
 - Réaliser des tests d'intrusion documentés
 - Analyser l'efficacité comparative des solutions de détection
 
-Les livrables attendus comprennent une synthèse technique de 5 à 10 pages, des annexes techniques détaillées, un rapport de gestion de projet avec bilan chiffré, un dépôt GitHub structuré, et une soutenance prévue le 30 janvier 2026.
+Les livrables attendus comprennent une synthèse technique de 5 à 10 pages, des annexes techniques détaillées, un rapport de gestion de projet, un dépôt GitHub structuré, et une soutenance prévue le 30 janvier 2026 accompagné d'un diaporama de présentation.
 
 
 ### Organisation de l'équipe
@@ -81,7 +81,7 @@ Nous avons mené le projet sur 2 phases d'une semaine chacune, adaptée aux cont
 
 | Outil | Usage | Avantages |
 |-------|-------|-----------|
-| **Trello** | Gestion des tâches (Kanban : À faire → En cours → Terminé) | Visualisation claire de l'avancement |
+| **Trello** | Gestion des tâches (À faire → En cours → Terminé) | Visualisation claire de l'avancement |
 | **GitHub** | Dépôt central (code, configs, docs, logs) | Traçabilité par commits, organisation structurée |
 | **Réunions quotidiennes** | Synchronisation d'équipe et résolution de blocages | Réactivité face aux problèmes techniques |
 
@@ -153,7 +153,7 @@ Nous avons mené le projet sur 2 phases d'une semaine chacune, adaptée aux cont
 | Scénarios d'attaque (Kerberos, etc.) | Maxine | 8h | Cartographie AD |
 | Collecte traces attaques | Les deux | 4h | Attaques lancées |
 | Analyse alertes Wazuh | Syrine | 3h | Traces collectées |
-| Analyse alertes Elastic | Syrine | 3h | Traces collectées |
+| Analyse alertes Elastic | Maxine | 3h | Traces collectées |
 | Analyse alertes Suricata | Maxine | 2h | Traces collectées |
 | Analyse comparative solutions | Les deux | 5h | Toutes analyses faites |
 | Rédaction synthèse technique | Les deux | 8h | Analyse terminée |
@@ -163,9 +163,9 @@ Nous avons mené le projet sur 2 phases d'une semaine chacune, adaptée aux cont
 
 **Total estimé Phase 2 : ~53h**
 
-### Jalons critiques
+### Etapes critiques
 
-| Date | Jalon | Critère de validation |
+| Date | Etape | Critère de validation |
 |------|-------|----------------------|
 | **24/01** | Fin Phase 1 - Infrastructure complète | Tous les SIEM/IDS/collecteurs opérationnels avec agents déployés |
 | **28/01** | Attaques réalisées + traces collectées | Au moins 3 scénarios d'attaque documentés avec logs |
@@ -268,23 +268,7 @@ Jour 10 : Finalisation + Soutenance
 | **Phase 2 : Tests & Analyse** | 53h | ~72h | +19h | Complexité analyse + rédaction sous-estimée |
 | **TOTAL** | **121h** | **140h** | **+19h** | Budget temps respecté grâce aux 2 personnes |
 
-### Points clés du suivi
 
-**Respect du planning :**
-- ✅ Jalon Semaine 1 atteint : Infrastructure complète opérationnelle le 24/01
-- ✅ Attaques lancées et traces collectées le 28/01
-- ⚠️ Légère pression sur la rédaction finale (29-30/01)
-
-**Charge de travail :**
-- Répartition équilibrée entre nous deux : Syrine (48%) et Maxine (52%)
-- Syrine concentrée sur la détection (SIEM + Ansible + gestion projet)
-- Maxine concentrée sur l'infrastructure et les tests (GOAD + Red Team + analyse)
-
-**Déviations par rapport au plan initial :**
-- Installation Elastic plus longue que prévu (+3h)
-- Déploiement GOAD plus complexe que prévu (+2h)
-- Dashboard Streamlit IA non planifié initialement mais ajouté pour valoriser OpenWEC
-- Temps de rédaction sous-estimé (+6h)
 
 ---
 
@@ -341,7 +325,7 @@ Jour 10 : Finalisation + Soutenance
 - **Entraide technique** : Nous nous sommes dépannées mutuellement sur les blocages
 
 **Outils de mitigation :**
-- Snapshots VirtualBox réguliers (tous les soirs)
+- Snapshots des VMs 
 - Scripts de déploiement versionnés sur Git
 - Documentation troubleshooting centralisée dans DOCS/04_troubleshooting/
 
@@ -372,61 +356,6 @@ Jour 10 : Finalisation + Soutenance
 | | | | |
 | | | | |
 
-### Compétences développées
-
-#### Compétences techniques
-
-**Syrine :**
-- Déploiement et configuration SIEM (Wazuh, Elastic Stack)
-- Automatisation avec Ansible (playbooks pour agents Wazuh et Elastic)
-- Remontée logs Sysmon sur Wazuh
-- Analyse de logs EVTX et détection d'intrusions
-- Gestion de projet agile
-
-**Maxine :**
-- Déploiement infrastructure AD complexe (GOAD)
-- Configuration IDS réseau (Suricata + règles Sigma)
-- Configuration Sysmon pour monitoring Windows
-- Collecteur de logs Windows (OpenWEC)
-- Développement dashboard IA avec Streamlit
-- Méthodologie Red Team (Exegol, attaques Kerberos, mouvement latéral)
-- Analyse comparative de solutions de sécurité
-
-**Ensemble :**
-- Gestion de projet agile (phases, backlog, Kanban)
-- Documentation technique structurée
-- Travail en binôme Blue/Red Team
-- Intégration de solutions hétérogènes
-- Troubleshooting avancé
-
-#### Compétences transversales
-
-- **Gestion du temps** : Respect d'une deadline serrée avec livrables multiples
-- **Priorisation** : Choix des tâches critiques vs "nice to have"
-- **Adaptabilité** : Ajustement du plan face aux imprévus
-- **Collaboration** : Coordination Blue/Red Team efficace et travail d'équipe constant
-- **Communication** : Documentation claire pour autrui
-- **Autonomie** : Résolution de problèmes sans support constant
-
-### Recommandations pour un projet similaire
-
-**Pour la planification :**
-1. Ajouter systématiquement 20-30% de marge sur les estimations
-2. Valider l'architecture réseau complète AVANT déploiement
-3. Prévoir 2 jours pleins minimum pour la rédaction finale
-4. Définir les critères d'acceptation de chaque jalon dès le départ
-
-**Pour l'organisation :**
-1. Formaliser les stand-ups quotidiens (même 5 min écrites)
-2. Créer des snapshots VMs après chaque étape critique
-3. Documenter en parallèle de l'installation (pas après)
-4. Utiliser un système de branches Git pour les expérimentations
-
-**Pour la technique :**
-1. Tester la communication réseau avant installation massive
-2. Automatiser dès que possible (Ansible, scripts)
-3. Privilégier la qualité (2-3 scénarios bien documentés) vs quantité
-4. Prévoir du temps de troubleshooting (20% du temps prévu)
 
 ---
 
