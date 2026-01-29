@@ -1,0 +1,5 @@
+# Jan 29, 2026 - 13:26:17 (CET)] exegol-pentest /workspace # nxc smb 10.203.19.63 -u '' -p '' -M zerologon
+SMB         10.203.19.63    445    MEEREEN          [*] Windows Server 2016 Standard Evaluation 14393 x64 (name:MEEREEN) (domain:essos.local) (signing:True) (SMBv1:True) (Null Auth:True)
+SMB         10.203.19.63    445    MEEREEN          [+] essos.local\:
+ZEROLOGON   10.203.19.63    445    MEEREEN          VULNERABLE
+ZEROLOGON   10.203.19.63    445    MEEREEN          Next step: https://github.com/dirkjanm/CVE-2020-1472
