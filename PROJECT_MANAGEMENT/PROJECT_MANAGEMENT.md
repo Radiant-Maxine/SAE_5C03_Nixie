@@ -217,6 +217,8 @@ Nous avons mené le projet sur 2 phases d'une semaine chacune, adaptée aux cont
 
 ![Répartition de taches par personne](repartition_taches_syrine2.png)
 
+![Répartition de taches par personne](repartition_temps_syrine_maxine.png)
+
 
 ## 5. Risques & Gestion
 
@@ -305,29 +307,6 @@ Nous avons mené le projet sur 2 phases d'une semaine chacune, adaptée aux cont
 
 ---
 
-## Leçons apprises 📚
-
-### Techniques
-- **Certificats TLS en environnement AD = complexité sous-estimée** : Toujours tester la PKI (Public Key Infrastructure) et les trust chains en environnement isolé avant le déploiement production
-- **OpenWEC = puissant mais verbeux** : Nécessite un filtrage agressif et des règles de corrélation dès le départ, sinon on se noie sous les événements Windows
-- **Elastic Stack = flexible mais courbe d'apprentissage raide** : Prévoir 50% de temps en plus pour le tuning des règles, des pipelines Logstash et de l'indexation
-- **La détection est un processus itératif** : Impossible d'avoir des règles parfaites du premier coup, il faut ajuster en continu en fonction des faux positifs/négatifs
-
-### Gestion de projet
-- **S'adapter > s'obstiner** : Nous avons bien fait de réduire le scope du dashboard IA (16h → 3h) plutôt que de perdre du temps sur une feature non critique pour le POC
-- **Communication quotidienne = clé du succès** : Les points rapides chaque matin nous ont évité beaucoup de blocages techniques et ont permis une résolution rapide des problèmes
-- **Planifier des buffers techniques** : Nous aurions dû prévoir 10-15% de temps tampon dans le planning pour les imprévus (certificats, tuning, compatibilité, etc.)
-- **Valider le scope régulièrement** : Revoir les objectifs avec l'encadrant chaque semaine pour éviter de partir dans des directions trop ambitieuses
-
-### Collaboration
-- **Blue Team + Red Team = complémentarité parfaite** : Maxine qui lance les attaques en temps réel pendant que Syrine observe les détections = approche très efficace et réaliste
-- **Structure GitHub claire dès J1 = gain de temps énorme** : Pas de perte de fichiers, pas de chaos en fin de projet, collaboration fluide tout au long du projet
-- **Trello simple et bien utilisé > outil complexe abandonné** : Un Kanban basique mais mis à jour quotidiennement est plus efficace qu'un outil ultra-sophistiqué jamais consulté
-- **Documentation continue > documentation de fin** : Rédiger les procédures au fur et à mesure évite le stress de dernière minute et garantit la qualité des livrables
-
-
-
----
 
 ## 7. Conclusion
 
