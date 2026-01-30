@@ -2,6 +2,7 @@
 
 **SAE:** Proof of Concept Blue Team / Red Team - Environnement GOAD  
 **Équipe:**  Maxine Botturi et Syrine Benkadhi 
+
 **Durée:** 10 jours (20/01/2026 - 30/01/2026)  
 
 
