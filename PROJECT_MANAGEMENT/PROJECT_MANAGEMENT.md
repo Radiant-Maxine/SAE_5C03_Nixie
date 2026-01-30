@@ -22,7 +22,7 @@ Notre projet vise à :
 - Réaliser des tests d'intrusion documentés
 - Analyser l'efficacité comparative des solutions de détection
 
-Les livrables attendus comprennent une synthèse technique de 5 à 10 pages, des annexes techniques détaillées, un rapport de gestion de projet, un dépôt GitHub structuré, et une soutenance prévue le 30 janvier 2026 accompagné d'un diaporama de présentation.
+Les livrables attendus comprennent une synthèse technique de 2 pages, des annexes techniques détaillées, un rapport de gestion de projet, un dépôt GitHub structuré, et une soutenance prévue le 30 janvier 2026 accompagné d'un diaporama.
 
 
 ### Organisation de l'équipe
@@ -53,7 +53,6 @@ Cette répartition nous a permis de travailler en parallèle durant la phase d'i
 
 ## 2. Méthodologie appliquée
 
-### Approche agile
 
 Nous avons mené le projet sur 2 phases d'une semaine chacune, adaptée aux contraintes de temps et à la taille de notre équipe.
 
@@ -92,21 +91,21 @@ Nous avons mené le projet sur 2 phases d'une semaine chacune, adaptée aux cont
 **Objectif :** Environnement complet avec toutes les solutions opérationnelles
 
 **Étapes importantes :**
-- ✅ Jour 1 (20/01) : GOAD déployé + Wazuh installé
-- ✅ Jour 2 (21/01) : Wazuh configuré + agents connectés
-- ✅ Jour 3 (22/01) : Ansible opérationnel + Elastic en cours
-- ✅ Jour 4 (23/01) : Suricata + procédures documentées
-- ✅ Jour 5 (24/01) : Validation infrastructure complète
+-  Jour 1 (20/01) : GOAD déployé + Wazuh installé
+-  Jour 2 (21/01) : Wazuh configuré + agents connectés
+-  Jour 3 (22/01) : Ansible opérationnel + Elastic en cours
+-  Jour 4 (23/01) : Suricata + procédures documentées
+-  Jour 5 (24/01) : Validation infrastructure complète
 
 #### Phase 2 : Tests & Analyse (27-30 janvier)
 
 **Objectif :** Tests d'intrusion + analyse comparative + livrables finaux
 
 **Étapes importantes :**
-- ✅ Jour 6 (27/01) : OpenWEC + Dashboard IA + Elastic finalisé + Suricata configuré
-- ✅ Jour 7 (28/01) : Exegol + premières attaques Kerberos + traces collectées
-- 🔄 Jour 8 (29/01) : Analyse comparative en cours + rédaction
-- 📋 Jour 9 (30/01) : Finalisation synthèse + soutenance + réinitialisation matériel
+-  Jour 6 (27/01) : OpenWEC + Dashboard IA + Elastic finalisé + Suricata configuré
+-  Jour 7 (28/01) : Exegol + premières attaques Kerberos + traces collectées
+-  Jour 8 (29/01) : Analyse comparative en cours + rédaction
+-  Jour 9 (30/01) : Finalisation synthèse + soutenance + réinitialisation matériel
 
 ---
 
@@ -173,17 +172,6 @@ Nous avons mené le projet sur 2 phases d'une semaine chacune, adaptée aux cont
 | **30/01 matin** | Synthèse finale + annexes prêtes | Documents complets pour le rendu |
 | **30/01 après-midi** | Soutenance + réinitialisation | Présentation effectuée + matériel nettoyé |
 
-### Risques identifiés en amont
-
-| Risque | Impact | Probabilité | Plan d'atténuation |
-|--------|--------|-------------|-------------------|
-| GOAD ne se déploie pas correctement | ⚠️ Critique | Moyenne | Snapshots réguliers, documentation Orange Cyberdefense |
-| Problèmes de communication agents SIEM | ⚠️ Élevé | Élevée | Tests firewall Windows, config réseau validée en amont |
-| Manque de temps pour analyse comparative | ⚠️ Moyen | Élevée | Prioriser 2-3 scénarios d'attaque représentatifs |
-| Retard sur déploiement Suricata | ⚠️ Moyen | Moyenne | Documentation en parallèle, support communauté |
-| Oubli réinitialisation matériel | ⚠️ Élevé | Faible | Checklist finale obligatoire, alarme rappel |
-
----
 
 ## 4. Bilan chiffré & Suivi du temps
 
@@ -222,17 +210,6 @@ Nous avons mené le projet sur 2 phases d'une semaine chacune, adaptée aux cont
 
 ![Répartition globale par type de tâche](graphique1_camembert.png)
 
-### Comparaison estimé vs réel
-
-| Phase | Temps estimé | Temps réel | Écart | Commentaire |
-|-------|--------------|-----------|-------|-------------|
-| **Phase 1 : Infrastructure** | 68h | ~68h | 0h | Estimation correcte malgré problèmes réseau |
-| **Phase 2 : Tests & Analyse** | 53h | ~72h | +19h | Complexité analyse + rédaction sous-estimée |
-| **TOTAL** | **121h** | **140h** | **+19h** | Budget temps respecté grâce aux 2 personnes |
-
-
-
----
 
 ## 5. Risques & Gestion
 
@@ -246,8 +223,7 @@ Nous avons mené le projet sur 2 phases d'une semaine chacune, adaptée aux cont
 | **R4** | Retard déploiement Suricata | Moyen | Moyenne | ✅ Géré | Documentation en parallèle, tests de placement réseau optimisés |
 | **R5** | Manque de temps pour analyse comparative | Moyen | Élevée | ⚠️ Partiellement | Priorisation 2-3 scénarios d'attaque clés (Kerberos principalement) |
 | **R6** | Installation Elastic complexe | Moyen | Élevée | ⚠️ Survenu | Troubleshooting documenté (Windows/Debian), +3h supplémentaires |
-| **R7** | Synthèse finale bâclée (deadline 30/01) | Critique | Élevée | 🔄 En cours | Début rédaction dès 29/01, template préparé, répartition sections |
-| **R8** | Oubli réinitialisation matériel | Élevé | Faible | 📋 Planifié | Checklist finale créée, alarme rappel 30/01 après-midi |
+
 
 ### Problèmes rencontrés et solutions
 
@@ -257,16 +233,15 @@ Nous avons mené le projet sur 2 phases d'une semaine chacune, adaptée aux cont
 - **Solution appliquée :** Nous avons reconfiguré le mode réseau VirtualBox (bridge + NAT), validation ping/telnet systématique
 - **Leçon apprise :** Valider l'architecture réseau complète avant de déployer les agents
 
-**Problème 2 : Installation Elastic sous-estimée**
-- **Description :** Configuration Elasticsearch + Kibana + Fleet plus complexe que prévu
-- **Impact :** +3h par rapport à notre estimation initiale
-- **Solution appliquée :** Nous avons créé une documentation troubleshooting, tests sur Debian puis Windows
-- **Leçon apprise :** Prévoir du temps de débogage pour des outils non maîtrisés
+**Problème 2 : Réinstallation de Elastic 4 fois**
+- **Description :** Réinstallation Elasttic à cause d'un plantage de l'ordinateur.
+- **Solution appliquée :** Nous avons mis en place une sécurisation de l'insttallation et déploiement via des snapchots
+- **Leçon apprise :** Faire des snpchots à chaque nouvelle configuration
 
 **Problème 3 : Compression du temps d'analyse**
 - **Description :** Phase 1 plus longue que prévu, réduisant le temps disponible pour l'analyse comparative
-- **Impact :** Limitation à 2-3 scénarios d'attaque au lieu de 5-6 prévus
-- **Solution appliquée :** Nous avons focalisé sur les attaques Kerberos (très représentatives), collecte traces précise
+- **Impact :** Limitation à 2 scénarios d'attaque au lieu de 5-6 prévus
+- **Solution appliquée :** Nous avons focalisé sur les attaques Kerberos et Zerologon, collecte traces précise
 - **Leçon apprise :** Prévoir une marge de sécurité de 20% sur les estimations
 
 ### Décisions d'ajustement prises
@@ -275,8 +250,8 @@ Nous avons mené le projet sur 2 phases d'une semaine chacune, adaptée aux cont
 |------|----------|---------------|--------|
 | **22/01** | Ajout dashboard Streamlit IA pour OpenWEC | Valoriser le collecteur, faciliter analyse logs | +6h de dev mais gain en analyse |
 | **24/01** | Report finalisation Elastic à semaine 2 | Prioriser infrastructure GOAD fonctionnelle | Réorganisation planning semaine 2 |
-| **27/01** | Priorisation attaques Kerberos uniquement | Manque de temps pour scénarios multiples | Focus qualité > quantité |
-| **28/01** | Répartition rédaction synthèse 50/50 | Deadline serrée 30/01 | Parallélisation rédaction |
+| **27/01** | Priorisation attaques simple et une complexe | Manque de temps pour scénarios multiples | Focus qualité > quantité |
+| **28/01** | Répartition rédaction synthèse 50/50 | Deadline  30/01 | Parallélisation rédaction |
 
 ### Gestion des imprévus
 
